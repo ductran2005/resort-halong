@@ -1,0 +1,6 @@
+{
+  "name": "Emerald Cruise — Du Thuyền Hạ Long VIP",
+  "description": "Trải nghiệm du thuyền 5 sao đẳng cấp giữa kỳ quan Vịnh Hạ Long với không gian thiết kế sang trọng, dịch vụ thượng lưu và hành trình riêng tư dành cho giới tinh hoa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
