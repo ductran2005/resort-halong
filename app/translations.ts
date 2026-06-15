@@ -23,7 +23,7 @@ export const TRANSLATIONS = {
     // Story
     story_badge: "Vọng Gác Tâm Hồn",
     story_title: "Không chỉ là chuyến đi. Đó là một nghi thức sống chậm.",
-    story_quote: "“Intercoin Resort sinh ra từ mong muốn chắt lọc tinh hoa văn hóa Champa cổ kính kết hợp cùng Indochine quý phái, nơi Thượng khách được chăm sóc trọn vẹn, riêng tư và độc bản nhất.”",
+    story_quote: "“InterContinental Danang Resort sinh ra từ mong muốn chắt lọc tinh hoa văn hóa Champa cổ kính kết hợp cùng Indochine quý phái, nơi Thượng khách được chăm sóc trọn vẹn, riêng tư và độc bản nhất.”",
     story_privacy_title: "Bí Mật Từ Sự Riêng Tư",
     story_privacy_desc: "Hạn chế số lượng phòng và biệt thự giúp bảo vệ sự riêng tư trọn vẹn. Bạn hoàn toàn làm chủ không gian hồ bơi riêng tư và bãi biển biệt lập không tiếng ồn ào đô thị.",
     story_taste_title: "Trải Nghiệm Khơi Gợi Vị Giác",
@@ -71,14 +71,14 @@ export const TRANSLATIONS = {
     gallery_title: "Khoảnh Khắc Đắt Giá",
     gallery_desc: "Nụ cười sảng khoái trên Cầu Vàng lộng gió, vạt hoàng hôn đỏ rực tếu tít nâng ly rượu ngọt trên cát bãi biển Mỹ Khê. Những tháp ảnh kể lại vạn lời mộng tinh tú.",
     gallery_zoom: "Bấm để xem lớn",
-    gallery_album: "Intercoin Resort Album",
+    gallery_album: "InterContinental Danang Album",
     gallery_image_counter: "Hình ảnh",
     gallery_image_of: "trên",
     
     // Booking Form
     book_badge: "Đặc Quyền Tư Vấn Đỉnh Phong",
     book_title: "Sẵn Sàng Khởi Hành?",
-    book_desc: "Hãy để lại lời nhắn quý báu. Chuyên viên đại sứ phục vụ Thượng khách của Intercoin Resort sẽ tức tốc ghi nhận, chuẩn bị trà sâm dứa thơm và gọi điện xin tiếp chỉ ý kiến hoàn mỹ trong cuộc điện đàm 10 phút.",
+    book_desc: "Hãy để lại lời nhắn quý báu. Chuyên viên đại sứ phục vụ Thượng khách của InterContinental Danang Resort sẽ tức tốc ghi nhận, chuẩn bị trà sâm dứa thơm và gọi điện xin tiếp chỉ ý kiến hoàn mỹ trong cuộc điện đàm 10 phút.",
     book_sec_title: "Chính Sách Bảo Mật Tối Cao",
     book_sec_desc: "Thông tin liên lạc và nguyện vọng cá nhân được ẩn danh, mã hóa tối mật hoàn toàn trong hệ sinh thái.",
     book_custom_title: "Cá Nhân Hóa Trọn Vẹn",
@@ -96,15 +96,15 @@ export const TRANSLATIONS = {
     form_submitting: "Đang Gửi Lịch Tư Vấn...",
 
     // Butler Chat
-    chat_role: "Intercoin Travel",
+    chat_role: "InterContinental Travel",
     chat_name: "Trợ Lý Du Lịch",
-    chat_typing: "Intercoin đang trả lời",
+    chat_typing: "InterContinental đang trả lời",
     chat_suggest: "Đề Xuất Câu Hỏi Để Hỏi",
     chat_placeholder: "Bạn muốn khám phá Đà Nẵng thế nào?",
-    chat_welcome: "Xin chào, tôi là Trợ lý Du lịch Intercoin. Tôi có thể giúp bạn lên lịch trình Đà Nẵng, chọn điểm tham quan và tìm trải nghiệm nghỉ dưỡng phù hợp. Bạn dự định đi ngày nào và cùng bao nhiêu người?",
-    chat_err_butler: "Kết nối đang tạm thời gián đoạn. Vui lòng thử lại hoặc gửi yêu cầu tư vấn để đội ngũ Intercoin hỗ trợ.",
-    chat_mobile_butler: "Trò chuyện với Intercoin",
-    chat_bubble: "Hỏi Intercoin",
+    chat_welcome: "Xin chào, tôi là Trợ lý Du lịch InterContinental. Tôi có thể giúp bạn lên lịch trình Đà Nẵng, chọn điểm tham quan và tìm trải nghiệm nghỉ dưỡng phù hợp. Bạn dự định đi ngày nào và cùng bao nhiêu người?",
+    chat_err_butler: "Kết nối đang tạm thời gián đoạn. Vui lòng thử lại hoặc gửi yêu cầu tư vấn để đội ngũ InterContinental hỗ trợ.",
+    chat_mobile_butler: "Trò chuyện với InterContinental",
+    chat_bubble: "Hỏi InterContinental",
 
     // Footer
     footer_about: "Kỳ nghỉ dưỡng di sản độc bản tại Đà Nẵng, kết hợp trọn vẹn giữa văn hóa miền Trung quyến rũ và dịch vụ quản gia phục vụ cá nhân hóa đỉnh cấp hàng đầu.",
@@ -118,8 +118,8 @@ export const TRANSLATIONS = {
     footer_newsletter_desc: "Đăng ký nhận thông tin ưu đãi ẩn danh chỉ dành cho thành viên VIP.",
     footer_newsletter_placeholder: "Nhập email của bạn...",
     footer_newsletter_btn: "Đăng ký",
-    footer_copyright: "© 2026 Intercoin Resort & Heritage Group. Bảo lưu mọi quyền.",
-    footer_operator: "Kỳ nghỉ di sản đặc tuyển được khai thác bởi Công ty TNHH Nghỉ Dưỡng Intercoin Đà Nẵng.",
+    footer_copyright: "© 2026 InterContinental Danang Resort & Heritage Group. Bảo lưu mọi quyền.",
+    footer_operator: "Kỳ nghỉ di sản đặc tuyển được khai thác bởi Công ty TNHH Nghỉ Dưỡng InterContinental Đà Nẵng.",
     footer_ai_studio: "Gia trì & Hoàn thiện bởi Đội ngũ Kiến trúc sư AI Studio."
   },
   en: {
@@ -146,7 +146,7 @@ export const TRANSLATIONS = {
     // Story
     story_badge: "Sanctuary of the Soul",
     story_title: "More than a journey. A ritual of slow living.",
-    story_quote: "“Intercoin Resort was born out of a desire to blend ancient Champa culture with elegant Indochine design, where guests enjoy Da Nang in the most private, discreet, and exclusive way.”",
+    story_quote: "“InterContinental Danang Resort was born out of a desire to blend ancient Champa culture with elegant Indochine design, where guests enjoy Da Nang in the most private, discreet, and exclusive way.”",
     story_privacy_title: "The Luxury of Privacy",
     story_privacy_desc: "Limiting our villa capacity preserves absolute privacy. You will fully command the peaceful private beach and pools without the noise of modern life.",
     story_taste_title: "Curated Gastronomy",
@@ -194,14 +194,14 @@ export const TRANSLATIONS = {
     gallery_title: "Precious Moments",
     gallery_desc: "Radiant smiles on the windy Golden Bridge, the golden sun setting over champagne toasts on the sand. These images capture the beautiful stories of your vacation.",
     gallery_zoom: "Click to zoom",
-    gallery_album: "Intercoin Resort Album",
+    gallery_album: "InterContinental Danang Album",
     gallery_image_counter: "Image",
     gallery_image_of: "of",
     
     // Booking Form
     book_badge: "Elite Consultation Service",
     book_title: "Ready to Embark?",
-    book_desc: "Leave your wishes below. Intercoin Resort's personal guest ambassadors will log your requests, prepare premium tea, and call you back in 10 minutes.",
+    book_desc: "Leave your wishes below. InterContinental Danang Resort's personal guest ambassadors will log your requests, prepare premium tea, and call you back in 10 minutes.",
     book_sec_title: "Top-Tier Privacy Policy",
     book_sec_desc: "Your contact information and trip details are kept strictly confidential within our ecosystem.",
     book_custom_title: "Absolute Personalization",
@@ -219,15 +219,15 @@ export const TRANSLATIONS = {
     form_submitting: "Submitting Request...",
 
     // Butler Chat
-    chat_role: "Intercoin Travel",
+    chat_role: "InterContinental Travel",
     chat_name: "Travel Assistant",
-    chat_typing: "Intercoin is replying",
+    chat_typing: "InterContinental is replying",
     chat_suggest: "Suggested Questions",
     chat_placeholder: "How would you like to explore Da Nang?",
-    chat_welcome: "Hello, I am the Intercoin Travel Assistant. I can help plan your Da Nang itinerary, recommend attractions, and find a suitable resort experience. What are your travel dates and group size?",
-    chat_err_butler: "The connection is temporarily unavailable. Please try again or send a consultation request to the Intercoin team.",
-    chat_mobile_butler: "Chat with Intercoin",
-    chat_bubble: "Ask Intercoin",
+    chat_welcome: "Hello, I am the InterContinental Travel Assistant. I can help plan your Da Nang itinerary, recommend attractions, and find a suitable resort experience. What are your travel dates and group size?",
+    chat_err_butler: "The connection is temporarily unavailable. Please try again or send a consultation request to the InterContinental team.",
+    chat_mobile_butler: "Chat with InterContinental",
+    chat_bubble: "Ask InterContinental",
 
     // Footer
     footer_about: "An exclusive heritage holiday in Da Nang, combining the charm of Central Vietnam with the finest personalized butler service.",
@@ -241,8 +241,8 @@ export const TRANSLATIONS = {
     footer_newsletter_desc: "Subscribe to receive private, elite-only resort deals and secret updates.",
     footer_newsletter_placeholder: "Enter your email address...",
     footer_newsletter_btn: "Subscribe",
-    footer_copyright: "© 2026 Intercoin Resort & Heritage Group. All rights reserved.",
-    footer_operator: "Signature itineraries operated by Intercoin Resort Da Nang Co., Ltd.",
+    footer_copyright: "© 2026 InterContinental Danang Resort & Heritage Group. All rights reserved.",
+    footer_operator: "Signature itineraries operated by InterContinental Danang Resort Co., Ltd.",
     footer_ai_studio: "Perfected & Maintained by AI Studio Architects Team."
   }
 };

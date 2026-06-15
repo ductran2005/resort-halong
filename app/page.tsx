@@ -245,8 +245,8 @@ export default function App() {
       // Fallback response for offline status
       setBookingSuccessMsg(
         lang === "vi"
-          ? `Kính thưa Quý khách ${bookingForm.name}, yêu cầu tư vấn chuyến đi đã được Quản gia tiếp nhận thành công. Chuyên viên dịch vụ của Intercoin Resort sẽ chủ động gọi lại cho Quý khách qua số điện thoại ${bookingForm.phone} trong vòng 10 phút.`
-          : `Dear Guest ${bookingForm.name}, your request has been successfully logged by our Butler. Intercoin Resort service representative will call you back at ${bookingForm.phone} within 10 minutes.`
+          ? `Kính thưa Quý khách ${bookingForm.name}, yêu cầu tư vấn chuyến đi đã được Quản gia tiếp nhận thành công. Chuyên viên dịch vụ của InterContinental Danang Resort sẽ chủ động gọi lại cho Quý khách qua số điện thoại ${bookingForm.phone} trong vòng 10 phút.`
+          : `Dear Guest ${bookingForm.name}, your request has been successfully logged by our Butler. InterContinental Danang Resort service representative will call you back at ${bookingForm.phone} within 10 minutes.`
       );
     } finally {
       setBookingLoading(false);
@@ -288,7 +288,7 @@ export default function App() {
       
       const butlerReply: ChatMessageType = {
         role: "model",
-        parts: [{ text: data.text || (lang === "vi" ? "Kết nối đang gián đoạn. Bạn có thể thử gửi lại câu hỏi hoặc để lại yêu cầu tư vấn để đội ngũ Intercoin hỗ trợ." : "The connection was interrupted. Please try again or leave a consultation request for the Intercoin team.") }]
+        parts: [{ text: data.text || (lang === "vi" ? "Kết nối đang gián đoạn. Bạn có thể thử gửi lại câu hỏi hoặc để lại yêu cầu tư vấn để đội ngũ InterContinental hỗ trợ." : "The connection was interrupted. Please try again or leave a consultation request for the InterContinental team.") }]
       };
       setChatMessages((prev) => [...prev, butlerReply]);
     } catch (error) {
@@ -324,7 +324,7 @@ export default function App() {
           }`}
         >
           <a href="#hero" className="flex items-center gap-1.5 sm:gap-3 group flex-shrink-0">
-            {/* Intercoin monogram */}
+            {/* InterContinental monogram */}
             <svg className="w-9 h-7 sm:w-12 sm:h-10 transition-transform duration-500 group-hover:-translate-y-0.5" viewBox="0 0 90 70" fill="none">
               <circle cx="45" cy="35" r="25" stroke="#D7B56D" strokeWidth="3" />
               <path d="M34 21V49" stroke="#D7B56D" strokeWidth="5" strokeLinecap="round" />
@@ -332,7 +332,7 @@ export default function App() {
               <path d="M16 59C31 55 58 55 74 59" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <div className="flex flex-col leading-none">
-              <strong className={`font-serif text-base sm:text-xl tracking-[0.16em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>INTERCOIN</strong>
+              <strong className={`font-serif text-xs sm:text-base tracking-[0.12em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>INTERCONTINENTAL</strong>
               <span className="text-[7px] sm:text-[8px] tracking-[0.35em] text-[#d7b56d] font-semibold mt-0.5 sm:mt-1">RESORT • DA NANG</span>
             </div>
           </a>
@@ -450,7 +450,7 @@ export default function App() {
             transition={{ duration: 15, ease: "easeOut" }}
             src="/images/danang_golden_bridge.png"
             className="w-full h-full object-cover" 
-            alt="Intercoin Resort Da Nang"
+            alt="InterContinental Danang Resort"
             referrerPolicy="no-referrer"
           />
           {/* Immersive overlay */}
@@ -575,7 +575,7 @@ export default function App() {
               <img 
                 src="/images/danang_resort_sunrise.png" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Intercoin Resort Horizon pool"
+                alt="InterContinental Danang Horizon pool"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-[#f7f1e5] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -1638,7 +1638,7 @@ export default function App() {
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <strong className="block font-serif text-base font-bold tracking-[0.12em] text-white">INTERCOIN DA NANG</strong>
+                  <strong className="block font-serif text-base font-bold tracking-[0.12em] text-white">INTERCONTINENTAL DANANG</strong>
                   <span className="mt-1 block text-[8px] font-semibold tracking-[0.16em] text-[#d7b56d]">
                     {lang === "vi" ? "BIỂN XANH • DI SẢN • NGHỈ DƯỠNG" : "OCEAN • HERITAGE • RETREAT"}
                   </span>
@@ -1722,7 +1722,7 @@ export default function App() {
                   <path d="M16 59C31 55 58 55 74 59" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
                 </svg>
                 <div className="flex flex-col select-none">
-                  <strong className="font-serif tracking-[0.12em] font-bold text-white text-sm">INTERCOIN DA NANG</strong>
+                  <strong className="font-serif tracking-[0.12em] font-bold text-white text-sm">INTERCONTINENTAL DANANG</strong>
                   <span className="text-[9px] tracking-wider text-[#d7b56d] font-semibold mt-0.5">
                     {lang === "vi" ? "BIỂN XANH • DI SẢN • NGHỈ DƯỠNG" : "OCEAN • HERITAGE • RETREAT"}
                   </span>
