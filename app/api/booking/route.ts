@@ -18,7 +18,7 @@ export async function POST(request: Request) {
       success: true,
       message: `Kính thưa Quý khách ${name}, yêu cầu tư vấn cho chuyến đi ngày ${
         date || "gần nhất"
-      } đã được Quản gia Hoàng tiếp nhận. Đội ngũ đại sứ của Emerald Cruise sẽ liên hệ lại qua số điện thoại ${phone} trong vòng 15 phút.`
+      } đã được Quản gia Hoàng tiếp nhận. Đội ngũ đại sứ của Emerald Da Nang Resort sẽ liên hệ lại qua số điện thoại ${phone} trong vòng 15 phút.`
     });
 
   } catch (error: any) {

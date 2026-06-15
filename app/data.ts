@@ -3,61 +3,61 @@ import { SuiteType, ExperienceType, ItineraryDayType } from "./types";
 export const SUITES_DATA: SuiteType[] = [
   {
     id: "royal-suite",
-    name: "Royal Suite",
-    vietnameseName: "Phòng Hoàng Gia",
+    name: "Royal Ocean Suite",
+    vietnameseName: "Phòng Hoàng Gia Hướng Biển",
     size: "65m²",
-    viewVi: "Toàn Cảnh Hướng Vịnh & Ban Công Riêng",
-    viewEn: "Panoramic Bay View & Private Balcony",
+    viewVi: "Toàn Cảnh Biển Mỹ Khê & Ban Công Riêng",
+    viewEn: "Panoramic My Khe Beach View & Private Balcony",
     capacityVi: "2 Người Lớn (+1 Trẻ Em)",
     capacityEn: "2 Adults (+1 Child)",
     pricePerPax: 2990000,
-    descriptionVi: "Không gian kết hợp hài hòa nét kiến trúc Đông Dương sang trọng và tiện nghi hiện đại, sở hữu ban công lãng mạn ngắm vịnh và bồn tắm dát vàng mở rộng hướng đại dương.",
-    descriptionEn: "A harmonious blend of luxurious Indochine architecture and modern comforts, featuring a romantic private balcony and a gold-plated bathtub opening to panoramic ocean views.",
+    descriptionVi: "Không gian kết hợp hài hòa nét kiến trúc Đông Dương sang trọng và tiện nghi hiện đại, sở hữu ban công lãng mạn ngắm hoàng hôn biển Mỹ Khê và bồn tắm dát vàng mở rộng hướng đại dương.",
+    descriptionEn: "A harmonious blend of luxurious Indochine architecture and modern comforts, featuring a romantic private balcony overlooking My Khe Beach and a gold-plated bathtub opening to panoramic ocean views.",
     featuresVi: [
-      "Ban công riêng biệt với bàn trà sang trọng",
-      "Bồn tắm nằm view kính toàn cảnh vịnh biển",
+      "Ban công riêng biệt với bàn trà sang trọng hướng biển",
+      "Bồn tắm nằm view kính toàn cảnh vịnh biển Đà Nẵng",
       "Giường ngủ King-size cao cấp bọc nhung hoàng gia",
       "Hệ thống thiết bị vệ sinh nhập khẩu Châu Âu",
-      "Trà thượng hạng và Giỏ hoa tươi đón chào"
+      "Trà sâm dứa thượng hạng và Giỏ hoa quả tươi đón chào"
     ],
     featuresEn: [
-      "Private balcony with luxury tea table",
-      "Bathtub with panoramic floor-to-ceiling glass views",
+      "Private balcony with luxury tea table facing the ocean",
+      "Bathtub with panoramic floor-to-ceiling glass views of Da Nang Bay",
       "Premium King-size bed with royal velvet upholstery",
       "European imported luxury sanitary wares",
-      "Premium welcome tea and fresh flower basket"
+      "Premium welcome pineapple-ginseng tea and fresh fruit basket"
     ],
     images: [
+      "/images/danang_luxury_suite.png",
       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200",
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1200",
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200"
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1200"
     ]
   },
   {
     id: "presidential-suite",
-    name: "Presidential Suite",
-    vietnameseName: "Phòng Tổng Thống",
-    size: "85m²",
-    viewVi: "Góc Nhìn Khép Kín 180 Độ Toàn Hệ Sinh Thái",
-    viewEn: "180-Degree Panoramic View of the Ecosystem",
-    capacityVi: "2 Người Lớn (+2 Trẻ Em)",
-    capacityEn: "2 Adults (+2 Children)",
-    pricePerPax: 4990000,
-    descriptionVi: "Được thiết kế tinh tế tinh xảo tối cao tại vị trí đầu du thuyền, trang bị sàn gỗ quý, ban công tắm nắng chuyên biệt và quản gia cá nhân túc trực phục vụ bữa ăn lãng mạn bất kỳ lúc nào.",
-    descriptionEn: "Exquisitely designed at the yacht's bow, featuring precious hardwood floors, a private sunbathing deck, and a personal butler ready to serve romantic dinners at any time.",
+    name: "Presidential Beachfront Villa",
+    vietnameseName: "Biệt Thự Tổng Thống Trước Biển",
+    size: "185m²",
+    viewVi: "Góc Nhìn Khép Kín 180 Độ Toàn Cảnh Biển Mỹ Khê",
+    viewEn: "180-Degree Panoramic View of My Khe Beach",
+    capacityVi: "4 Người Lớn (+2 Trẻ Em)",
+    capacityEn: "4 Adults (+2 Children)",
+    pricePerPax: 5990000,
+    descriptionVi: "Biệt thự trước biển thiết kế tinh xảo, sở hữu hồ bơi tràn bờ riêng biệt sát mép sóng, hiên tắm nắng rộng lớn và dịch vụ quản gia cá nhân túc trực phục vụ các bữa tiệc nướng BBQ lãng mạn.",
+    descriptionEn: "Exquisitely designed beachfront villa, featuring a private infinity pool right by the shoreline, a spacious sun deck, and a personal butler serving custom romantic BBQ dinners.",
     featuresVi: [
-      "Sân tắm nắng ngoài trời (Private Deck) rộng rãi",
+      "Hồ bơi tràn bờ ngoài trời (Private Pool) tiếp giáp bãi cát",
       "Hệ thống Quản gia cá nhân (Butler Service) 24/7",
       "Phòng khách biệt lập trang bị dàn loa Hi-End thượng đẳng",
       "Welcome Champagne và trứng cá tầm Caviar lúc nhận phòng",
-      "Liệu trình massage body 60 phút miễn phí hằng ngày"
+      "Liệu trình massage body 60 phút miễn phí hằng ngày tại resort"
     ],
     featuresEn: [
-      "Spacious private outdoor sun deck",
+      "Spacious private beachfront infinity swimming pool",
       "24/7 Personal Butler Service",
       "Separate living room with Hi-End premium sound system",
       "Welcome Champagne and Caviar upon check-in",
-      "Complimentary 60-minute daily body massage treatment"
+      "Complimentary 60-minute daily body massage treatment at resort spa"
     ],
     images: [
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200",
@@ -67,32 +67,32 @@ export const SUITES_DATA: SuiteType[] = [
   },
   {
     id: "imperial-duplex",
-    name: "Imperial Duplex Suite",
-    vietnameseName: "Căn Hộ Thông Tầng Đế Vương",
+    name: "Imperial Cliffside Duplex Suite",
+    vietnameseName: "Căn Hộ Thông Tầng Vách Đá Đế Vương",
     size: "120m²",
-    viewVi: "Góc Nhìn Điện Ảnh 270 Độ Ôm Trọn Kỳ Quan",
-    viewEn: "270-Degree Cinematic View of the Wonder",
+    viewVi: "Góc Nhìn Điện Ảnh 270 Độ Ôm Trọn Vịnh Đà Nẵng",
+    viewEn: "270-Degree Cinematic View of Da Nang Bay",
     capacityVi: "4 Người Lớn (+2 Trẻ Em)",
     capacityEn: "4 Adults (+2 Children)",
     pricePerPax: 7990000,
-    descriptionVi: "Tuyệt tác phòng thông tầng siêu sang đầu tiên trên vịnh biển Hạ Long. Thừa hưởng hồ bơi sục hơi Jacuzzi riêng tư trực diện mặt nước và hầm rượu vang độc bản phục vụ các bữa tiệc thượng đẳng.",
-    descriptionEn: "The first duplex masterpiece in Halong Bay. Featuring a private outdoor Jacuzzi directly touching the sea surface and an exclusive wine cellar for premium private dining.",
+    descriptionVi: "Tuyệt tác biệt thự thông tầng siêu sang tựa lưng vào bán đảo Sơn Trà. Sở hữu hồ bơi sục hơi Jacuzzi riêng tư trực diện đại dương và hầm rượu vang độc bản phục vụ các bữa tiệc thượng lưu.",
+    descriptionEn: "A magnificent duplex masterpiece resting on the cliffside of Son Tra Peninsula. Featuring a private outdoor Jacuzzi directly facing the ocean and an exclusive wine cellar for premium private dining.",
     featuresVi: [
-      "Cấu trúc biệt thự thông tầng (Duplex) trần cao lộng lẫy",
-      "Hồ Jacuzzi sục nước ấm ngoài trời tiếp giáp mặt biển",
+      "Cấu trúc biệt thự thông tầng (Duplex) trần cao lộng lẫy vách đá",
+      "Hồ Jacuzzi sục nước ấm ngoài trời ngắm hoàng hôn vịnh biển",
       "Tủ bảo quản xì-gà và vang hảo hạng tuyển chọn quốc tế",
-      "Hải trình bay trực thăng ngắm vịnh 20 phút cho mọi hành khách",
-      "Tiệc tối Fine Dining cá nhân hóa phục vụ ngay tại suite"
+      "Hải trình bay trực thăng ngắm toàn cảnh Đèo Hải Vân và Đà Nẵng",
+      "Tiệc tối Fine Dining hải sản cá nhân hóa phục vụ ngay tại suite"
     ],
     featuresEn: [
-      "Magnificent duplex structure with high ceilings",
-      "Private heated outdoor Jacuzzi next to the sea",
+      "Magnificent cliffside duplex structure with soaring high ceilings",
+      "Private heated outdoor Jacuzzi facing the panoramic bay sunset",
       "Cigar humidor and internationally curated fine wine cellar",
-      "20-minute scenic helicopter flight over the bay for all guests",
-      "Personalized Fine Dining dinners served inside the suite"
+      "20-minute scenic helicopter flight over Da Nang and Hai Van Pass",
+      "Personalized seafood Fine Dining dinners served inside the suite"
     ],
     images: [
-      "/images/imperial_duplex_suite_1.png",
+      "/images/danang_luxury_suite.png",
       "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200",
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200"
     ]
@@ -101,41 +101,41 @@ export const SUITES_DATA: SuiteType[] = [
 
 export const EXPERIENCES_DATA: ExperienceType[] = [
   {
-    id: "kayak",
-    title: "Eco Kayaking",
-    vietnameseTitle: "Khám Phá Hang Sáng Tối",
-    descriptionVi: "Tự tay lướt mái chèo gỗ qua những hang luồn kỳ bí, chiêm ngưỡng thế giới núi đá vôi nghìn năm trầm mặc dưới ánh nắng ngọc bích rực rỡ.",
-    descriptionEn: "Paddle through mysterious caves and discover the quiet, thousand-year-old limestone karsts emerging from the glowing emerald water.",
-    image: "/images/halong_kayaking.png",
-    timeVi: "15:00 - Ngày 1 & Ngày 2",
-    timeEn: "15:00 - Day 1 & Day 2"
+    id: "son-tra",
+    title: "Son Tra Wild Exploration",
+    vietnameseTitle: "Khám Phá Bán Đảo Sơn Trà",
+    descriptionVi: "Hành trình ngắm động vật hoang dã quý hiếm - Voọc chà vá chân nâu, vãn cảnh Chùa Linh Ứng uy nghiêm với bức tượng Phật Bà Quan Âm cao nhất Việt Nam.",
+    descriptionEn: "Spot rare Red-shanked douc langurs in their natural habitat, and visit the serene Linh Ung Pagoda featuring the tallest Lady Buddha statue in Vietnam.",
+    image: "/images/danang_beach_activity.png",
+    timeVi: "14:30 - Ngày 1",
+    timeEn: "14:30 - Day 1"
   },
   {
     id: "spa",
-    title: "Aqua Royal Spa",
-    vietnameseTitle: "Trị Liệu Thảo Mộc Thượng Uyển",
-    descriptionVi: "Nhắm mắt lắng nghe tiếng sóng vỗ, tận hưởng liệu trình massage bằng xông tinh dầu hoa sen tươi giúp phục hồi tâm trí và căng tràn sức sống.",
-    descriptionEn: "Close your eyes to the sound of soft waves, enjoying a massage treatment with fresh lotus essential oils to restore your mind and revitalize your body.",
+    title: "Cham Royal Spa",
+    vietnameseTitle: "Trị Liệu Thảo Mộc Cham Spa",
+    descriptionVi: "Nhắm mắt lắng nghe tiếng sóng vỗ rì rào, tận hưởng liệu trình massage bằng xông tinh dầu thảo mộc Chăm Pa giúp phục hồi tâm trí và tiếp thêm sinh lực.",
+    descriptionEn: "Close your eyes to the sound of soft waves, enjoying a massage treatment with Champa essential oils to restore your mind and revitalize your body.",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200",
     timeVi: "Phục vụ 09:00 - 21:00 hằng ngày",
     timeEn: "Served 09:00 - 21:00 daily"
   },
   {
     id: "sunset-party",
-    title: "Golden Hour Sunset Champagne",
-    vietnameseTitle: "Tiệc Champagne Hoàng Hôn",
-    descriptionVi: "Khoảnh khắc kỳ diệu khi ánh tà dương dát vàng mặt nước. Cùng nâng ly rượu vang nổ sủi bọt, trò chuyện lãng mạn bên nền nhạc violin cổ điển du dương.",
-    descriptionEn: "A magical moment when the setting sun turns the water to gold. Raise a glass of sparkling champagne, and share a romantic talk accompanied by classical violin music.",
+    title: "My Khe Golden Sunset Champagne",
+    vietnameseTitle: "Tiệc Champagne Hoàng Hôn Mỹ Khê",
+    descriptionVi: "Khoảnh khắc kỳ diệu khi hoàng hôn dát vàng mặt biển Mỹ Khê. Cùng nâng ly rượu vang nổ sủi bọt bên bờ cát mịn, thưởng thức nhạc violin cổ điển du dương.",
+    descriptionEn: "A magical moment when the setting sun turns My Khe beach to gold. Raise a glass of sparkling champagne on the fine sand, accompanied by live classical violin.",
     image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200",
-    timeVi: "17:30 - Ngày 1",
-    timeEn: "17:30 - Day 1"
+    timeVi: "17:30 - Ngày 1 & Ngày 2",
+    timeEn: "17:30 - Day 1 & Day 2"
   },
   {
     id: "private-dinner",
-    title: "Candlelit Fine Dining",
-    vietnameseTitle: "Mỹ Vị Dương Gian Dưới Ánh Nến",
-    descriptionVi: "Tiệc tối chuẩn ẩm thực Michelin đầy nghệ thuật. Hải sản bơi tươi rói khai thác trực tiếp được chế biến tài hoa bởi những siêu đầu bếp hàng đầu.",
-    descriptionEn: "A fine dining dinner crafted in artistic Michelin style. Fresh seafood caught directly from the bay, cooked by top master chefs.",
+    title: "Candlelit Seafood Fine Dining",
+    vietnameseTitle: "Mỹ Vị Hải Sản Dưới Ánh Nến",
+    descriptionVi: "Tiệc tối hải sản chuẩn Michelin lãng mạn trên bãi biển cát trắng. Tôm hùm đá, cua tuyết vàng nướng phô mai được chế biến tài hoa bởi siêu đầu bếp hàng đầu.",
+    descriptionEn: "A beachfront fine dining experience crafted in Michelin style. Fresh local rock lobster and snow crab cooked to perfection by top master chefs under candlelight.",
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200",
     timeVi: "19:30 - Hằng đêm",
     timeEn: "19:30 - Nightly"
@@ -145,179 +145,172 @@ export const EXPERIENCES_DATA: ExperienceType[] = [
 export const ITINERARY_DATA: ItineraryDayType[] = [
   {
     day: 1,
-    titleVi: "Nghi Thức Đón Chào & Ánh Hoàng Hôn Đầu Tiên",
-    titleEn: "Welcoming Ceremony & The First Sunset",
-    subtitleVi: "Cảng tàu Tuần Châu - Đón khách lên du thuyền - Tiệc trà chiều ngắm vịnh",
-    subtitleEn: "Tuan Chau Harbor - Boarding Ceremony - Sunset Tea Party",
-    image: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200",
+    titleVi: "Nghi Thức Đón Chào & Hoàng Hôn Sơn Trà",
+    titleEn: "Welcoming Ceremony & Son Tra Sunset",
+    subtitleVi: "Đón tiễn VIP - Nhận Villa nghỉ dưỡng - Chiêm ngưỡng Lady Buddha",
+    subtitleEn: "VIP Welcome - Villa Check-in - Lady Buddha Visit",
+    image: "/images/danang_resort_sunrise.png",
     activities: [
       {
         time: "11:30 - 12:15",
-        activityVi: "Check-in Nhà chờ VIP",
-        activityEn: "VIP Lounge Check-in",
-        descriptionVi: "Chào đón quý khách bằng thảm đỏ thượng lưu, thưởng thức cold press juice và hoàn tất thủ tục lên du thuyền.",
-        descriptionEn: "Welcome guests with a VIP red carpet, cold-pressed juices, and complete boarding procedures."
+        activityVi: "Check-in Nhà chờ VIP & Xe Đón",
+        activityEn: "VIP Lounge Check-in & Transfer",
+        descriptionVi: "Đại diện resort đón chào Quý khách bằng xe Limousine hạng sang, thưởng thức nước ép sâm dứa đá mát lạnh và hoàn tất nhanh thủ tục.",
+        descriptionEn: "Resort representatives welcome you with a luxury Limousine transfer, serving cold pineapple-ginseng tea and completing check-in."
       },
       {
         time: "12:30",
-        activityVi: "Chào mừng & Nhận phòng",
-        activityEn: "Boarding Ceremony & Check-in",
-        descriptionVi: "Đội ngũ hoa tiêu rải cánh hoa hồng chào mừng Quý khách lên ngọc tàu Emerald. Quản Gia cá nhân hướng dẫn nhận suite.",
-        descriptionEn: "Our team welcomes you on board with rose petals. Your personal butler directs you to your suite.",
+        activityVi: "Chào mừng nồng nhiệt & Nhận phòng",
+        activityEn: "Welcome Ceremony & Check-in",
+        descriptionVi: "Nghi thức rải hoa tươi chào đón quý khách tại sảnh chính. Quản gia cá nhân hướng dẫn nhận biệt thự trước biển.",
+        descriptionEn: "Welcome flower ceremony at the lobby. Your personal butler directs you to your beachfront villa.",
         highlight: true
       },
       {
         time: "13:00",
-        activityVi: "Bữa trưa Mỹ vị Bản địa",
-        activityEn: "Authentic Local Lunch",
-        descriptionVi: "Thực đơn trưa Hải vị đặc tuyển mộc mạc thơm lừng phục vụ tại nhà hàng Grand Panorama với góc nhìn vịnh biển vô cực.",
-        descriptionEn: "A rustic seafood lunch menu served at Grand Panorama restaurant with infinite bay views."
+        activityVi: "Bữa trưa Hải vị Bản địa",
+        activityEn: "Authentic Seafood Lunch",
+        descriptionVi: "Thực đơn hải sản thơm lừng khai vị tại nhà hàng Grand Panorama với góc nhìn biển Mỹ Khê vô cực tuyệt đẹp.",
+        descriptionEn: "A fresh local seafood lunch menu served at the Grand Panorama restaurant with infinite beach views."
       },
       {
-        time: "15:30",
-        activityVi: "Kayak khám phá vụng hoang Lan Hạ",
-        activityEn: "Eco Kayaking in Lan Ha Bay",
-        descriptionVi: "Tham gia chèo thuyền hoặc tự do nghỉ ngơi ngâm mình dưới bồn tắm sục Jacuzzi của du thuyền giữa không gian tĩnh lặng.",
-        descriptionEn: "Join kayaking or relax inside our outdoor heated Jacuzzi in a peaceful atmosphere."
-      },
-      {
-        time: "17:30",
-        activityVi: "Sunset Premium Party",
-        activityEn: "Premium Sunset Party",
-        descriptionVi: "Tiệc dâu tây, phô mai lát và sâm-panh hoàng hôn. Tiếng nhạc hòa tấu mượt mà khởi nguyên cho kỳ nghỉ xa xỉ.",
-        descriptionEn: "Sunset party featuring fresh strawberries, cheese platters, and champagne. Soft live music starts your luxury holiday.",
+        time: "14:30",
+        activityVi: "Tham quan Chùa Linh Ứng & Bán đảo Sơn Trà",
+        activityEn: "Son Tra Peninsula & Linh Ung Pagoda Tour",
+        descriptionVi: "Xe riêng đưa quý khách lên đỉnh Sơn Trà, vãn cảnh chùa tôn nghiêm và ngắm nhìn toàn cảnh thành phố biển từ chân Lady Buddha.",
+        descriptionEn: "Private transfer takes you to Son Tra Peninsula, visiting the peaceful pagoda and enjoying views from Lady Buddha statue.",
         highlight: true
       },
       {
+        time: "17:30",
+        activityVi: "Sunset Premium Party trên bãi biển",
+        activityEn: "Premium Sunset Party on the Beach",
+        descriptionVi: "Tiệc sâm-panh và canapé ngắm hoàng hôn buông xuống Mỹ Khê thơ mộng, hòa cùng âm điệu violin cổ điển tinh tế.",
+        descriptionEn: "Sunset beach party featuring cheese platters, canapés, and champagne. Live violin starts your luxury holiday."
+      },
+      {
         time: "19:30",
-        activityVi: "Đại tiệc nến Michelin",
-        activityEn: "Michelin-style Candlelit Dinner",
-        descriptionVi: "Tiệc tối sang trọng đẳng cấp cao với Tôm Hùm đá nướng, sườn cừu đút lò cùng súp bào ngư thượng hạng.",
-        descriptionEn: "High-end luxury dinner featuring grilled rock lobster, baked lamb rack, and premium abalone soup."
+        activityVi: "Đại tiệc hải sản Michelin dưới ánh nến",
+        activityEn: "Michelin-style Seafood Candlelit Dinner",
+        descriptionVi: "Tiệc tối lãng mạn bên tiếng sóng vỗ với thực đơn Tôm Hùm đá nướng, súp bào ngư vây cá thượng hạng.",
+        descriptionEn: "High-end beachfront dinner featuring grilled rock lobster, premium abalone soup, and fine wine pairings."
       }
     ]
   },
   {
     day: 2,
-    titleVi: "Vùng Biển Ngọc Sương - Hang Sáng Tối bí ẩn",
-    titleEn: "Misty Pearl Sea - Mysterious Dark & Light Cave",
-    subtitleVi: "Thái Cực Quyền - Thăm Làng nổi chài lưới xưa - Trị liệu thư giãn chuyên biệt",
-    subtitleEn: "Taichi Session - Floating Fishing Village Visit - Royal Spa Therapy",
-    image: "https://images.unsplash.com/photo-1552083375-1447ce886485?q=80&w=1200",
+    titleVi: "Đỉnh Bà Nà Hills - Cầu Vàng & Phố Cổ Hội An Lộng Lẫy",
+    titleEn: "Ba Na Hills & Golden Bridge - Magic Hoi An Lanterns",
+    subtitleVi: "Yoga bình minh - Check-in Cầu Vàng - Thả hoa đăng sông Hoài",
+    subtitleEn: "Sunrise Yoga - Golden Bridge VIP Tour - Hoi An Lantern Boat Ride",
+    image: "/images/danang_golden_bridge.png",
     activities: [
       {
         time: "06:15",
-        activityVi: "Khởi tạo Năng lượng Taichi",
-        activityEn: "Morning Taichi Session",
-        descriptionVi: "Bài tập dưỡng sinh Thái Cực Quyền đón ánh bình minh vàng dịu nhẹ nhất lọc tinh khí đất trời.",
-        descriptionEn: "Gentle Taichi exercises on the sundeck to welcome the morning sunrise and refresh your mind."
+        activityVi: "Yoga & Thiền định trên bãi cát trắng",
+        activityEn: "Morning Beach Yoga & Meditation",
+        descriptionVi: "Lớp học Yoga đón bình minh nhô lên từ biển Đông, giúp điều hòa hơi thở và tái tạo năng lượng thể chất tốt lành.",
+        descriptionEn: "Gentle beach yoga session to welcome the sunrise over the East Sea and refresh your mind."
       },
       {
         time: "07:00",
-        activityVi: "Bữa sáng Hoàng Gia",
-        activityEn: "Royal Breakfast",
-        descriptionVi: "Thưởng thức bánh sừng bò nóng hổi nướng lò, ngũ cốc, phở bò tươi hảo hạng và cà phê thủ công tuyệt vời.",
-        descriptionEn: "Enjoy freshly baked croissants, cereals, traditional beef Pho, and hand-brewed coffee."
+        activityVi: "Bữa sáng Buffet Hoàng Gia",
+        activityEn: "Royal Buffet Breakfast",
+        descriptionVi: "Thưởng thức bánh ngọt Pháp, trái cây tươi nhiệt đới dồi dào, phở bò đặc sản miền Trung cùng cà phê phin đậm đà.",
+        descriptionEn: "Enjoy freshly baked pastries, tropical fruits, local beef Pho, and traditional Vietnamese filter coffee."
       },
       {
         time: "08:30",
-        activityVi: "Khám phá Làng cổ trên vịnh",
-        activityEn: "Explore Ancient Floating Village",
-        descriptionVi: "Gặp gỡ dân chài địa phương hoài cổ, tham gia tìm hiểu phương thức ngọc trai quý báu đắt giá bậc nhất Đông Dương.",
-        descriptionEn: "Meet local fishermen and learn about pearl harvesting methods, historically prized across Indochina.",
+        activityVi: "Tour VIP Bà Nà Hills & Cầu Vàng",
+        activityEn: "Ba Na Hills & Golden Bridge VIP Tour",
+        descriptionVi: "Di chuyển bằng cáp treo cabin VIP vượt qua làn sương mây, tham quan Cầu Vàng biểu tượng held by giant hands và Làng Pháp cổ kính.",
+        descriptionEn: "Take a VIP cable car cabin through the clouds, walk on the iconic Golden Bridge held by giant stone-like hands.",
         highlight: true
       },
       {
-        time: "12:00",
-        activityVi: "Bữa trưa Khơi Xa lãng mạn",
-        activityEn: "Romantic Ocean BBQ Lunch",
-        descriptionVi: "Ẩm thực nướng BBQ ngoài trời cực kỳ sảng khoái với cua tuyết vàng nướng phô mai đút lò thơm nức mũi.",
-        descriptionEn: "Savor a refreshing outdoor BBQ grill lunch featuring baked golden snow crab with cheese."
+        time: "12:30",
+        activityVi: "Bữa trưa BBQ hải sản nướng bên bờ biển",
+        activityEn: "Beachside Seafood BBQ Lunch",
+        descriptionVi: "Thưởng thức tiệc nướng hải sản phong phú cua huỳnh đế, hàu sữa nướng mỡ hành thơm nức tại bãi biển riêng của resort.",
+        descriptionEn: "Savor a beachside BBQ grill lunch featuring king crab and grilled local oysters."
       },
       {
-        time: "14:30",
-        activityVi: "Cano bọc da tham quan Hang Sáng Tối",
-        activityEn: "Leather Speedboat to Dark & Light Cave",
-        descriptionVi: "Tàu tốc hành đưa quý khách vào quần thể đầm phá khép kín ngoạn mục nhất, thỏa mãn mọi tín đồ đam mê nhiếp ảnh tự nhiên.",
-        descriptionEn: "A high-speed boat takes you to the most stunning enclosed lagoon, perfect for natural photography enthusiasts."
-      },
-      {
-        time: "16:30",
-        activityVi: "Nghi thức trà chiều hoàng kim",
-        activityEn: "Golden Hour Afternoon Tea & Spa",
-        descriptionVi: "Tận hưởng ưu đãi liệu trình Spa tẩm quất hoàng gia kéo dài 60 phút tái tạo toàn diện năng cơ cột sống mệt nhọc.",
-        descriptionEn: "Enjoy a complimentary 60-minute royal massage therapy to fully rejuvenate your muscles."
+        time: "15:30",
+        activityVi: "Bách bộ Phố cổ Hội An & Thả hoa đăng",
+        activityEn: "Excursion to Hoi An Ancient Town",
+        descriptionVi: "Xe đưa Quý khách tham quan phố cổ đèn lồng rực rỡ, đi thuyền gỗ thả đèn hoa đăng lung linh cầu an trên dòng sông Hoài.",
+        descriptionEn: "Explore the ancient town illuminated by lanterns, ride a wooden boat and release floating candle lanterns on Hoai River.",
+        highlight: true
       },
       {
         time: "19:30",
-        activityVi: "Dạ tiệc mặt trăng lộng lẫy",
-        activityEn: "Splendid Moonlight Gala",
-        descriptionVi: "Tiệc khiêu vũ nhẹ nhàng dưới ánh đèn nghệ thuật lãng mạn trên sân thượng Sky Lounge ngọc.",
-        descriptionEn: "A gentle social dance party under romantic artistic lighting on the sundeck of Sky Lounge.",
-        highlight: true
+        activityVi: "Dạ tiệc ẩm thực sông nước Hội An",
+        activityEn: "Hoi An Riverside Gala Dinner",
+        descriptionVi: "Thực đơn tối thưởng thức món ăn đặc sản truyền thống Cao Lầu, cơm gà Phố Hội bên bờ sông rực rỡ sắc màu.",
+        descriptionEn: "Enjoy a special riverside dinner featuring traditional local dishes like Cao Lau and Hoi An chicken rice."
       }
     ]
   },
   {
     day: 3,
-    titleVi: "Tịnh Tâm Đầu Thu - Khứ Hồi Cảng Ngọc",
-    titleEn: "Autumn Meditation - Return to Harbor",
-    subtitleVi: "Tắm nắng ban mai - Trải nghiệm lớp học nấu ăn nghệ thuật - Tiễn đoàn",
-    subtitleEn: "Morning Sunbathing - Cooking Masterclass - Farewell",
-    image: "/images/aodai_mic_halong.png",
+    titleVi: "Danh Thắng Ngũ Hành Sơn - Mì Quảng Truyền Thống",
+    titleEn: "Marble Mountains Sanctuary - Traditional Cooking Masterclass",
+    subtitleVi: "Thăm Động Huyền Không - Lớp học đổ bánh xèo & Mì Quảng - Tiễn khách",
+    subtitleEn: "Huyen Khong Cave Visit - Quảng Noodle Masterclass - Farewell",
+    image: "/images/danang_beach_activity.png",
     activities: [
       {
         time: "06:30",
-        activityVi: "Ngắm bình minh muộn trên ban công",
-        activityEn: "Late Sunrise View on Balcony",
-        descriptionVi: "Khơi gợi giác quan bằng tách trà sen thanh tao tươi mới được phục vụ ngay tầng hiên phòng nghỉ ngơi.",
+        activityVi: "Ngắm bình minh muộn & Trà sen ban công",
+        activityEn: "Late Sunrise & Lotus Tea on Balcony",
+        descriptionVi: "Đón ngày mới thảnh thơi bên ly trà sen Tây Hồ thanh tao phục vụ tận hiên phòng nghỉ.",
         descriptionEn: "Awaken your senses with a freshly brewed cup of lotus tea served right on your suite balcony."
       },
       {
         time: "08:00",
-        activityVi: "Bữa sáng dinh dưỡng cao",
-        activityEn: "Nutritious Breakfast",
-        descriptionVi: "Khởi động ngày cuối thanh dã nhẹ nhàng cùng trái cây vùng nhiệt đới, nước ép detox giàu vitamin dồi dào.",
-        descriptionEn: "Start your final day gently with tropical fruits and vitamin-rich detox juices."
+        activityVi: "Khám phá Danh thắng Ngũ Hành Sơn",
+        activityEn: "Explore Marble Mountains",
+        descriptionVi: "Bách bộ tham quan các hang động huyền ảo như Động Huyền Không, Chùa Tam Thai cổ kính ngàn năm tuổi.",
+        descriptionEn: "Walk up the scenic marble steps, exploring spiritual caves like Huyen Khong and ancient Tam Thai pagoda."
       },
       {
-        time: "09:30",
-        activityVi: "Lớp học bánh xèo truyền thống",
-        activityEn: "Traditional Banh Xeo Cooking Class",
-        descriptionVi: "Bếp trưởng hướng dẫn bí quyết đổ đĩa bánh xèo giòn tan vàng ươm trứ danh hồn cốt dân tộc.",
-        descriptionEn: "Our Head Chef shares secrets to making crispy, golden traditional Vietnamese Banh Xeo.",
+        time: "10:00",
+        activityVi: "Lớp học nấu Mì Quảng & Bánh Xèo truyền thống",
+        activityEn: "Quảng Noodle & Banh Xeo Cooking Masterclass",
+        descriptionVi: "Bếp trưởng resort chia sẻ bí quyết làm sợi mì Quảng mềm dai thơm mùi củ nén và đĩa bánh xèo giòn rụm màu nghệ.",
+        descriptionEn: "Our Head Chef shares secrets to making traditional Quảng noodles and crispy golden Vietnamese Banh Xeo.",
         highlight: true
       },
       {
-        time: "10:30",
+        time: "11:30",
         activityVi: "Check-out thảnh thơi",
         activityEn: "Leisure Check-out",
-        descriptionVi: "Hành khách thong thả làm thủ tục trả phòng, thanh toán chi phí phụ thu nếu có tại quầy tiếp tân ấm cúng.",
-        descriptionEn: "Leisurely complete check-out procedures and settle personal tabs at the cozy reception desk."
-      },
-      {
-        time: "11:00",
-        activityVi: "Brunch buffet thịnh soạn",
-        activityEn: "Sumptuous Farewell Brunch",
-        descriptionVi: "Bữa trưa sớm thịnh soạn nạp đầy sinh lực cho chặng đường trở về đất liền thuận buồm xuôi gió.",
-        descriptionEn: "Enjoy a rich farewell brunch buffet to recharge before returning to the mainland."
+        descriptionVi: "Hoàn tất thủ tục trả phòng thong thả tại quầy lễ tân sang trọng, lưu lại những bức ảnh kỷ niệm cùng đội ngũ phục vụ.",
+        descriptionEn: "Leisurely complete check-out procedures and settle personal bills at the cozy reception desk."
       },
       {
         time: "12:00",
-        activityVi: "Trở về Cảng tàu Tuần Châu",
-        activityEn: "Return to Tuan Chau Harbor",
-        descriptionVi: "Đại lễ vẫy tay chào tạm biệt của thủy thủ đoàn. Xe Limousine cao cấp đón quý khách hồi gia an toàn.",
-        descriptionEn: "Farewell wave ceremony from the crew. Premium Limousine transfer picks you up safely."
+        activityVi: "Brunch buffet tiễn đoàn thịnh soạn",
+        activityEn: "Sumptuous Farewell Brunch",
+        descriptionVi: "Bữa trưa sớm nhiều dinh dưỡng nạp đầy năng lượng cho chặng bay trở về nhà suôn sẻ.",
+        descriptionEn: "Enjoy a rich farewell brunch buffet to recharge before your flight back home."
+      },
+      {
+        time: "13:30",
+        activityVi: "Tiễn sân bay Đà Nẵng",
+        activityEn: "Transfer to Da Nang Airport",
+        descriptionVi: "Quản gia tiễn đoàn ra xe Limousine riêng đưa tiễn thẳng ra sân bay Đà Nẵng. Chào tạm biệt Thượng khách.",
+        descriptionEn: "Your butler bids farewell as you board the private Limousine for a smooth transfer to Da Nang International Airport."
       }
     ]
   }
 ];
 
 export const GALLERY_DATA = [
-  { url: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=900", title: "Làn nước xanh trong như ngọc bích" },
-  { url: "/images/halong_sunrise.png", title: "Đón nắng ban mai rực rỡ" },
-  { url: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=900", title: "Không gian Hoàng Gia tráng lệ" },
-  { url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=900", title: "Hồ Jacuzzi sục nước ấm ngoài trời tiếp sườn núi" },
-  { url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=900", title: "Thực đơn tối Fine Dining" },
-  { url: "/images/halong_kayaking.png", title: "Hoạt động chèo xuồng yên ả" }
+  { url: "/images/danang_golden_bridge.png", title: "Cầu Vàng Bà Nà Hills ẩn hiện trong sương mây" },
+  { url: "/images/danang_resort_sunrise.png", title: "Bình minh rực sắc rạng ngời tại hồ vô cực resort" },
+  { url: "/images/danang_luxury_suite.png", title: "Không gian biệt thự phòng ngủ Imperial Duplex tráng lệ" },
+  { url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=900", title: "Hồ Jacuzzi sục nước ấm tựa vách núi Sơn Trà" },
+  { url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=900", title: "Ẩm thực hải sản Michelin bên bờ đại dương" },
+  { url: "/images/danang_beach_activity.png", title: "Thư giãn thảnh thơi đón gió biển trên cát trắng Mỹ Khê" }
 ];

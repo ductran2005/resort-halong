@@ -2,8 +2,8 @@ import "./globals.css";
 import React from "react";
 
 export const metadata = {
-  title: "Emerald Cruise - Luxury Halong Bay Cruise",
-  description: "Trải nghiệm kỳ nghỉ dưỡng 5 sao thượng lưu giữa lòng di sản kỳ quan thiên nhiên thế giới Vịnh Hạ Long cùng du thuyền siêu sang Emerald Cruise.",
+  title: "Emerald Da Nang Resort & Villas - Luxury Da Nang Tour & Getaway",
+  description: "Trải nghiệm kỳ nghỉ dưỡng 5 sao thượng lưu giữa lòng di sản miền Trung cùng resort siêu sang và các tour du lịch Đà Nẵng độc quyền tại Emerald Da Nang Resort.",
 };
 
 export default function RootLayout({

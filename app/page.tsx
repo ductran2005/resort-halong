@@ -44,6 +44,7 @@ export default function App() {
   // Navigation active state
   const [activeSection, setActiveSection] = useState("hero");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedMobileHeroImage, setSelectedMobileHeroImage] = useState(0);
 
   // Suite showcase state
   const [selectedSuiteId, setSelectedSuiteId] = useState("royal-suite");
@@ -57,9 +58,11 @@ export default function App() {
   // Itinerary planner state (which day is active)
   const [activeDay, setActiveDay] = useState(1);
   const [hoveredActivityIndex, setHoveredActivityIndex] = useState<number | null>(null);
+  const [expandedActivityIndex, setExpandedActivityIndex] = useState<number | null>(null);
 
   // Gallery lightbox state
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [mobileGalleryIndex, setMobileGalleryIndex] = useState(0);
 
   // Booking form state
   const [bookingForm, setBookingForm] = useState({
@@ -306,6 +309,23 @@ export default function App() {
   };
 
   const isLightHeader = activeSection === "story" || activeSection === "gallery";
+  const mobileHeroImages = [
+    {
+      src: "/images/danang_golden_bridge.png",
+      alt: "Cầu Vàng Bà Nà Hills",
+      position: "object-center"
+    },
+    {
+      src: "/images/danang_my_khe_beach.jpg",
+      alt: "Bãi biển Mỹ Khê",
+      position: "object-[65%_center]"
+    },
+    {
+      src: "/images/danang_dragon_bridge.jpg",
+      alt: "Cầu Rồng Đà Nẵng",
+      position: "object-center"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#030811] text-[#f7f1e5] font-sans selection:bg-[#d7b56d] selection:text-[#030811]">
@@ -330,7 +350,7 @@ export default function App() {
             </svg>
             <div className="flex flex-col leading-none">
               <strong className={`font-serif text-base sm:text-xl tracking-[0.2em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>EMERALD</strong>
-              <span className="text-[7px] sm:text-[8px] tracking-[0.35em] text-[#d7b56d] font-semibold mt-0.5 sm:mt-1">CRUISE • HALONG BAY</span>
+              <span className="text-[7px] sm:text-[8px] tracking-[0.35em] text-[#d7b56d] font-semibold mt-0.5 sm:mt-1">RESORT • DA NANG</span>
             </div>
           </a>
 
@@ -445,31 +465,30 @@ export default function App() {
             initial={{ scale: 1.12 }}
             animate={{ scale: 1.0 }}
             transition={{ duration: 15, ease: "easeOut" }}
-            src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1800"
+            src="/images/danang_golden_bridge.png"
             className="w-full h-full object-cover" 
-            alt="Emerald Cruise Halong Bay"
+            alt="Emerald Da Nang Resort & Villas"
             referrerPolicy="no-referrer"
           />
           {/* Immersive overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#030811] via-[#030811]/30 to-[#030811]/60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030811]/80 via-transparent to-[#030811]/20" />
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 items-end">
+        <div className="relative z-10 w-full max-w-[1536px] xl:max-w-[1600px] mx-auto px-6 lg:px-16 xl:px-24 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 xl:gap-32 items-center">
           
           {/* Hero Left Content */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2 }}
-            className="flex flex-col items-start"
+            className="flex flex-col items-start lg:-ml-8 xl:-ml-16"
           >
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
               <Compass className="w-4 h-4 text-[#d7b56d] animate-spin-slow" />
               <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#d7b56d]">{t.hero_badge}</span>
             </div>
             
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.85] tracking-tight text-[#f7f1e5]">
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-bold leading-[1.1] tracking-tight text-[#f7f1e5]">
               {t.hero_title_line1}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f7f1e5] via-[#efd398] to-[#d7b56d]">{t.hero_title_line2}</span>
@@ -480,53 +499,123 @@ export default function App() {
             <p className="mt-8 text-white/75 text-base md:text-lg max-w-lg leading-relaxed font-light">
               {t.hero_desc}
             </p>
+
+            {/* Premium action buttons in Left Content */}
+            <div className="mt-10 flex flex-wrap gap-4 items-center">
+              <a 
+                href="#booking"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#d7b56d] to-[#f4d187] text-[#030811] text-xs font-bold uppercase tracking-[0.2em] transition-all hover:translate-y-[-2px] hover:shadow-[0_12px_28px_rgba(215,181,109,0.3)]"
+              >
+                {t.hero_card_cta}
+              </a>
+              <a 
+                href="#itinerary"
+                className="px-8 py-4 rounded-full border border-white/20 hover:border-white/50 text-[#f7f1e5] text-xs font-bold uppercase tracking-[0.2em] transition-all hover:bg-white/5"
+              >
+                {lang === "vi" ? "Lịch Trình Chi Tiết" : "View Itinerary"}
+              </a>
+            </div>
           </motion.div>
 
-          {/* Hero Right Callout Card */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            className="w-full max-w-sm rounded-[32px] p-8 bg-white/[0.04] border border-white/10 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+          {/* Hero Mobile Image Viewer */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.45 }}
+            className="w-full lg:hidden"
           >
-            <div className="flex justify-between items-center pb-4 border-b border-white/5">
-              <span className="text-[10px] tracking-[0.250em] uppercase font-extrabold text-[#d7b56d] flex items-center gap-1">
-                <Anchor className="w-3.5 h-3.5" /> {t.hero_card_title}
-              </span>
-              <span className="px-3 py-1 rounded-full text-[9px] font-bold bg-[#d7b56d]/10 text-[#d7b56d] border border-[#d7b56d]/20 uppercase tracking-widest">
-                {t.hero_card_duration}
-              </span>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={mobileHeroImages[selectedMobileHeroImage].src}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.35 }}
+                className="relative mb-3 aspect-[4/3] overflow-hidden rounded-[24px] border border-white/20 shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
+              >
+                <img
+                  src={mobileHeroImages[selectedMobileHeroImage].src}
+                  className={`h-full w-full object-cover ${mobileHeroImages[selectedMobileHeroImage].position}`}
+                  alt={mobileHeroImages[selectedMobileHeroImage].alt}
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white drop-shadow-lg">
+                  {mobileHeroImages[selectedMobileHeroImage].alt}
+                </span>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="flex items-center justify-center gap-3">
+              {mobileHeroImages.map((image, index) => (
+                <button
+                  type="button"
+                  key={image.src}
+                  onClick={() => setSelectedMobileHeroImage(index)}
+                  aria-label={`Phóng lớn ${image.alt}`}
+                  className={`relative overflow-hidden border shadow-[0_16px_32px_rgba(0,0,0,0.4)] transition-all ${
+                    selectedMobileHeroImage === index
+                      ? "h-16 w-20 rounded-xl border-[#d7b56d] ring-2 ring-[#d7b56d]/35"
+                      : "h-14 w-16 rounded-xl border-white/15 opacity-70"
+                  }`}
+                >
+                  <img
+                    src={image.src}
+                    className={`h-full w-full object-cover ${image.position}`}
+                    alt={image.alt}
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Hero Desktop Image Collage (Arch & Wave Layout) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
+            className="hidden lg:grid grid-cols-2 gap-5 items-center w-full max-w-lg xl:max-w-[640px] mx-auto"
+          >
+            {/* Left Column - Arched Top Image */}
+            <div className="h-[380px] sm:h-[480px] lg:h-[600px] rounded-t-[160px] sm:rounded-t-[200px] rounded-b-[24px] sm:rounded-b-[32px] overflow-hidden border border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.5)] relative group">
+              <img 
+                src="/images/danang_golden_bridge.png" 
+                className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                alt="Cầu Vàng Bà Nà Hills, biểu tượng nổi tiếng của Đà Nẵng"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-[#d7b56d]/25 rounded-t-[160px] sm:rounded-t-[200px] rounded-b-[24px] sm:rounded-b-[32px] transition-all duration-700 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             </div>
 
-            <div className="my-6">
-              <div className="text-white/50 text-[11px] uppercase tracking-wider">{t.hero_card_from}</div>
-              <div className="text-4xl md:text-5xl font-sans text-[#f7f1e5] font-bold tracking-tight mt-1">
-                {formatVND(1990000)}
-                <span className="text-sm font-sans font-light text-white/60 ml-1">{t.hero_card_pax}</span>
+            {/* Right Column - Stack of 2 Images */}
+            <div className="flex flex-col gap-4 lg:gap-5">
+              {/* Top Right - Rounded Corner Beach Image */}
+              <div className="h-[180px] sm:h-[230px] lg:h-[290px] rounded-[24px] sm:rounded-[32px] overflow-hidden border border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.5)] relative group">
+                <img 
+                  src="/images/danang_my_khe_beach.jpg" 
+                  className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                  alt="Bãi biển Mỹ Khê, Đà Nẵng"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-[#d7b56d]/25 rounded-[24px] sm:rounded-[32px] transition-all duration-700 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              {/* Bottom Right - Arched Bottom Pool Image */}
+              <div className="h-[180px] sm:h-[230px] lg:h-[290px] rounded-b-[160px] sm:rounded-b-[200px] rounded-t-[24px] sm:rounded-t-[32px] overflow-hidden border border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.5)] relative group">
+                <img 
+                  src="/images/danang_dragon_bridge.jpg" 
+                  className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                  alt="Cầu Rồng Đà Nẵng rực sáng về đêm"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-[#d7b56d]/25 rounded-b-[160px] sm:rounded-b-[200px] rounded-t-[24px] sm:rounded-t-[32px] transition-all duration-700 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
-
-            <ul className="space-y-3 mb-8">
-              {[
-                lang === "vi" ? "Nghỉ dưỡng Suite ban công rộng ngoạn mục" : "Luxury Suite accommodation with private panoramic balcony",
-                lang === "vi" ? "Quản gia trưởng phục vụ hành trình riêng biệt" : "Dedicated Head Butler serving custom request throughout",
-                lang === "vi" ? "Tiệc Sâm-panh và Canapé ngắm hoàng hôn" : "Premium Sunset Champagne and Canapés social hour",
-                lang === "vi" ? "Đặc quyền Spa cao cấp & lớp học Taichi" : "Complimentary spa treatment and outdoor Taichi class",
-                lang === "vi" ? "Trọn gói ẩm thực hải sản thượng phẩm Michelin" : "All-inclusive Michelin-standard seafood gastronomy feasts"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs text-white/75">
-                  <Check className="w-4 h-4 text-[#d7b56d] flex-shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a 
-              href="#booking"
-              className="block w-full py-4 rounded-xl bg-gradient-to-r from-[#d7b56d] to-[#f4d187] text-[#030811] text-center font-bold text-xs uppercase tracking-[0.2em] transition-all hover:translate-y-[-2px] hover:shadow-[0_12px_28px_rgba(215,181,109,0.3)]"
-            >
-              {t.hero_card_cta}
-            </a>
           </motion.div>
 
         </div>
@@ -540,7 +629,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d7b56d]">{t.story_badge}</span>
-            <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[0.95] mt-4">
+            <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.15] mt-4">
               {t.story_title}
             </h2>
           </div>
@@ -555,17 +644,17 @@ export default function App() {
               className="h-[400px] md:h-[580px] rounded-[40px] overflow-hidden shadow-2xl relative group"
             >
               <img 
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200" 
+                src="/images/danang_resort_sunrise.png" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Emerald Cruise Horizon pool"
+                alt="Emerald Da Nang Horizon pool"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-[#f7f1e5] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <span className="text-[10px] uppercase tracking-widest text-[#d7b56d]">Cảm Hứng Thiết Kế</span>
                 <p className="font-serif text-lg mt-1 italic">
                   {lang === "vi" 
-                    ? "Hòa quyện kiến trúc Pháp cổ kính và dấu ấn mộc mạc của thuyền mộc Bắc Bộ xưa dâng trào cảm xúc." 
-                    : "Merging elegant French colonial architecture with rustic Northern traditional wooden boat tones."}
+                    ? "Hòa quyện kiến trúc Pháp cổ kính và dấu ấn nghệ thuật Champa quyến rũ bên bờ sóng Thái Bình Dương." 
+                    : "Merging elegant French colonial architecture with the enchanting charm of Champa art by the Pacific waves."}
                 </p>
               </div>
             </motion.div>
@@ -636,7 +725,10 @@ export default function App() {
               {[1, 2, 3].map((day) => (
                 <button
                   key={day}
-                  onClick={() => setActiveDay(day)}
+                  onClick={() => {
+                    setActiveDay(day);
+                    setExpandedActivityIndex(null);
+                  }}
                   className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                     activeDay === day 
                       ? "bg-[#d7b56d] text-[#030811] shadow-lg shadow-[#d7b56d]/25" 
@@ -697,7 +789,7 @@ export default function App() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     onMouseEnter={() => setHoveredActivityIndex(index)}
                     onMouseLeave={() => setHoveredActivityIndex(null)}
-                    className={`p-6 rounded-2xl border transition-all duration-300 relative ${
+                    className={`p-5 sm:p-6 rounded-2xl border transition-all duration-300 relative ${
                       act.highlight 
                         ? "bg-gradient-to-r from-[#d7b56d]/15 to-transparent border-[#d7b56d]/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]" 
                         : hoveredActivityIndex === index 
@@ -706,24 +798,55 @@ export default function App() {
                     }`}
                   >
                     {act.highlight && (
-                      <span className="absolute top-4 right-4 flex items-center gap-1 text-[8px] font-bold tracking-widest text-[#d7b56d] bg-[#d7b56d]/15 px-2 py-0.5 rounded-full uppercase border border-[#d7b56d]/20">
+                      <span className="absolute top-4 right-12 sm:right-4 flex items-center gap-1 text-[8px] font-bold tracking-widest text-[#d7b56d] bg-[#d7b56d]/15 px-2 py-0.5 rounded-full uppercase border border-[#d7b56d]/20">
                         <Sparkles className="w-2.5 h-2.5" /> {t.itinerary_highlight}
                       </span>
                     )}
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-[#d7b56d]" />
-                        <span className="font-mono text-sm text-[#d7b56d] font-semibold">{act.time}</span>
+                    <button
+                      type="button"
+                      onClick={() => setExpandedActivityIndex((current) => current === index ? null : index)}
+                      className="w-full text-left sm:pointer-events-none"
+                      aria-expanded={expandedActivityIndex === index}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4 text-[#d7b56d]" />
+                            <span className="font-mono text-sm text-[#d7b56d] font-semibold">{act.time}</span>
+                          </div>
+                          <span className="hidden sm:inline-block text-white/30">•</span>
+                          <h4 className="font-serif text-lg font-bold text-white tracking-wide pr-5 sm:pr-0">
+                            {activityText}
+                          </h4>
+                        </div>
+                        <ChevronDown
+                          className={`mt-1 h-5 w-5 flex-shrink-0 text-[#d7b56d] transition-transform sm:hidden ${
+                            expandedActivityIndex === index ? "rotate-180" : ""
+                          }`}
+                        />
                       </div>
-                      <span className="hidden sm:inline-block text-white/30">•</span>
-                      <h4 className="font-serif text-lg font-bold text-white tracking-wide">
-                        {activityText}
-                      </h4>
-                    </div>
-                    <p className="mt-2 text-xs sm:text-sm text-white/70 leading-relaxed pl-1">
+                    </button>
+
+                    <p className="mt-2 hidden text-xs sm:block sm:text-sm text-white/70 leading-relaxed pl-1">
                       {descriptionText}
                     </p>
+
+                    <AnimatePresence initial={false}>
+                      {expandedActivityIndex === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="overflow-hidden sm:hidden"
+                        >
+                          <p className="pt-3 text-xs text-white/70 leading-relaxed pl-1">
+                            {descriptionText}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
                 );
               })}
@@ -1058,8 +1181,64 @@ export default function App() {
             </p>
           </div>
 
-          {/* Beautiful bento mesh block */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {/* Mobile featured image with thumbnail selector */}
+          <div className="sm:hidden">
+            <AnimatePresence mode="wait">
+              <motion.button
+                type="button"
+                key={GALLERY_DATA[mobileGalleryIndex].url}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.35 }}
+                onClick={() => setLightboxIndex(mobileGalleryIndex)}
+                className="relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-[#030811]/10 bg-[#030811] text-left shadow-[0_18px_45px_rgba(3,8,17,0.18)]"
+              >
+                <img
+                  src={GALLERY_DATA[mobileGalleryIndex].url}
+                  className="h-full w-full object-cover"
+                  alt={GALLERY_DATA[mobileGalleryIndex].title}
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-white">
+                  <div>
+                    <p className="font-serif text-lg font-bold">{GALLERY_DATA[mobileGalleryIndex].title}</p>
+                    <span className="mt-1 block text-[9px] uppercase tracking-[0.2em] text-white/70">{t.gallery_zoom}</span>
+                  </div>
+                  <span className="rounded-full border border-white/20 bg-black/30 p-2.5 backdrop-blur-md">
+                    <Image className="h-4 w-4 text-[#d7b56d]" />
+                  </span>
+                </div>
+              </motion.button>
+            </AnimatePresence>
+
+            <div className="no-scrollbar mt-4 flex gap-3 overflow-x-auto pb-2">
+              {GALLERY_DATA.map((item, index) => (
+                <button
+                  type="button"
+                  key={item.url}
+                  onClick={() => setMobileGalleryIndex(index)}
+                  aria-label={`Chọn ảnh ${item.title}`}
+                  className={`relative h-16 flex-shrink-0 overflow-hidden rounded-xl border transition-all ${
+                    mobileGalleryIndex === index
+                      ? "w-20 border-[#d7b56d] ring-2 ring-[#d7b56d]/35"
+                      : "w-16 border-[#030811]/10 opacity-65"
+                  }`}
+                >
+                  <img
+                    src={item.url}
+                    className="h-full w-full object-cover"
+                    alt={item.title}
+                    referrerPolicy="no-referrer"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Beautiful desktop bento mesh block */}
+          <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {GALLERY_DATA.map((item, index) => {
               const isTall = index === 1 || index === 4;
               return (
@@ -1161,7 +1340,7 @@ export default function App() {
               <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#d7b56d]">{t.book_badge}</span>
             </div>
             
-            <h2 className="font-serif text-4.5xl sm:text-6xl font-bold tracking-tight text-[#f7f1e5] leading-[0.95]">
+            <h2 className="font-serif text-4.5xl sm:text-6xl font-bold tracking-tight text-[#f7f1e5] leading-[1.15]">
               {t.book_title}
             </h2>
             <p className="mt-6 text-white/70 text-sm max-w-md leading-relaxed font-light">
@@ -1477,7 +1656,7 @@ export default function App() {
         <motion.button
           onClick={() => setChatOpen(true)}
           whileHover={{ scale: 1.05 }}
-          className="fixed bottom-6 right-6 p-4 rounded-full bg-[#d7b56d] text-[#030811] shadow-2xl z-[150] flex items-center gap-2 font-bold cursor-pointer group"
+          className="fixed bottom-6 right-6 p-4 rounded-full bg-[#d7b56d] text-[#030811] shadow-2xl z-[150] hidden sm:flex items-center gap-2 font-bold cursor-pointer group"
         >
           <div className="relative">
             <MessageSquare className="w-5 h-5 flex-shrink-0" />
