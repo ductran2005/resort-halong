@@ -44,7 +44,6 @@ export default function App() {
   // Navigation active state
   const [activeSection, setActiveSection] = useState("hero");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedMobileHeroImage, setSelectedMobileHeroImage] = useState(0);
 
   // Suite showcase state
   const [selectedSuiteId, setSelectedSuiteId] = useState("royal-suite");
@@ -63,6 +62,7 @@ export default function App() {
   // Gallery lightbox state
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [mobileGalleryIndex, setMobileGalleryIndex] = useState(0);
+  const [mobileGalleryDirection, setMobileGalleryDirection] = useState(1);
 
   // Booking form state
   const [bookingForm, setBookingForm] = useState({
@@ -309,23 +309,6 @@ export default function App() {
   };
 
   const isLightHeader = activeSection === "story" || activeSection === "gallery";
-  const mobileHeroImages = [
-    {
-      src: "/images/danang_golden_bridge.png",
-      alt: "Cầu Vàng Bà Nà Hills",
-      position: "object-center"
-    },
-    {
-      src: "/images/danang_my_khe_beach.jpg",
-      alt: "Bãi biển Mỹ Khê",
-      position: "object-[65%_center]"
-    },
-    {
-      src: "/images/danang_dragon_bridge.jpg",
-      alt: "Cầu Rồng Đà Nẵng",
-      position: "object-center"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-[#030811] text-[#f7f1e5] font-sans selection:bg-[#d7b56d] selection:text-[#030811]">
@@ -341,15 +324,15 @@ export default function App() {
           }`}
         >
           <a href="#hero" className="flex items-center gap-1.5 sm:gap-3 group flex-shrink-0">
-            {/* Dynamic Svg branding icon */}
+            {/* Intercoin monogram */}
             <svg className="w-9 h-7 sm:w-12 sm:h-10 transition-transform duration-500 group-hover:-translate-y-0.5" viewBox="0 0 90 70" fill="none">
-              <path d="M12 55L31 18L45 55H12Z" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" />
-              <path d="M39 55L60 8L78 55H39Z" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" />
-              <path d="M45 55C52 45 55 32 53 16C64 27 69 40 70 55H45Z" fill="#D7B56D" fillOpacity={isLightHeader ? "0.95" : "0.8"} className="transition-all duration-500" />
-              <path d="M10 62C26 58 40 58 54 62C66 65 76 64 84 60" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="1.5" className="transition-all duration-500" />
+              <circle cx="45" cy="35" r="25" stroke="#D7B56D" strokeWidth="3" />
+              <path d="M34 21V49" stroke="#D7B56D" strokeWidth="5" strokeLinecap="round" />
+              <path d="M58 24C54 20 47 20 43 24C37 30 37 40 43 46C47 50 54 50 58 46" stroke={isLightHeader ? "#030811" : "#F4D187"} strokeWidth="5" strokeLinecap="round" className="transition-all duration-500" />
+              <path d="M16 59C31 55 58 55 74 59" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <div className="flex flex-col leading-none">
-              <strong className={`font-serif text-base sm:text-xl tracking-[0.2em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>EMERALD</strong>
+              <strong className={`font-serif text-base sm:text-xl tracking-[0.16em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>INTERCOIN</strong>
               <span className="text-[7px] sm:text-[8px] tracking-[0.35em] text-[#d7b56d] font-semibold mt-0.5 sm:mt-1">RESORT • DA NANG</span>
             </div>
           </a>
@@ -517,60 +500,6 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* Hero Mobile Image Viewer */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.45 }}
-            className="w-full lg:hidden"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={mobileHeroImages[selectedMobileHeroImage].src}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35 }}
-                className="relative mb-3 aspect-[4/3] overflow-hidden rounded-[24px] border border-white/20 shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
-              >
-                <img
-                  src={mobileHeroImages[selectedMobileHeroImage].src}
-                  className={`h-full w-full object-cover ${mobileHeroImages[selectedMobileHeroImage].position}`}
-                  alt={mobileHeroImages[selectedMobileHeroImage].alt}
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white drop-shadow-lg">
-                  {mobileHeroImages[selectedMobileHeroImage].alt}
-                </span>
-              </motion.div>
-            </AnimatePresence>
-
-            <div className="flex items-center justify-center gap-3">
-              {mobileHeroImages.map((image, index) => (
-                <button
-                  type="button"
-                  key={image.src}
-                  onClick={() => setSelectedMobileHeroImage(index)}
-                  aria-label={`Phóng lớn ${image.alt}`}
-                  className={`relative overflow-hidden border shadow-[0_16px_32px_rgba(0,0,0,0.4)] transition-all ${
-                    selectedMobileHeroImage === index
-                      ? "h-16 w-20 rounded-xl border-[#d7b56d] ring-2 ring-[#d7b56d]/35"
-                      : "h-14 w-16 rounded-xl border-white/15 opacity-70"
-                  }`}
-                >
-                  <img
-                    src={image.src}
-                    className={`h-full w-full object-cover ${image.position}`}
-                    alt={image.alt}
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                </button>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Hero Desktop Image Collage (Arch & Wave Layout) */}
           <motion.div 
             initial={{ opacity: 0, x: 50, scale: 0.95 }}
@@ -721,7 +650,7 @@ export default function App() {
             </div>
 
             {/* Interactive Day Toggle Buttons */}
-            <div className="flex bg-white/5 border border-white/10 rounded-full p-1.5 mt-8 md:mt-0 gap-1">
+            <div className="flex w-fit max-w-full self-center md:self-auto bg-white/5 border border-white/10 rounded-full p-1 mt-8 md:mt-0 gap-0.5 sm:gap-1">
               {[1, 2, 3].map((day) => (
                 <button
                   key={day}
@@ -729,7 +658,7 @@ export default function App() {
                     setActiveDay(day);
                     setExpandedActivityIndex(null);
                   }}
-                  className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                  className={`px-4 sm:px-6 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${
                     activeDay === day 
                       ? "bg-[#d7b56d] text-[#030811] shadow-lg shadow-[#d7b56d]/25" 
                       : "text-white/80 hover:text-white hover:bg-white/5"
@@ -1181,18 +1110,25 @@ export default function App() {
             </p>
           </div>
 
-          {/* Mobile featured image with thumbnail selector */}
-          <div className="sm:hidden">
+          {/* Mobile and tablet featured image with thumbnail selector */}
+          <div className="lg:hidden">
             <AnimatePresence mode="wait">
-              <motion.button
-                type="button"
+              <motion.div
                 key={GALLERY_DATA[mobileGalleryIndex].url}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
+                initial={{ opacity: 0, x: mobileGalleryDirection * 70 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: mobileGalleryDirection * -70 }}
                 transition={{ duration: 0.35 }}
-                onClick={() => setLightboxIndex(mobileGalleryIndex)}
-                className="relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-[#030811]/10 bg-[#030811] text-left shadow-[0_18px_45px_rgba(3,8,17,0.18)]"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.16}
+                onDragEnd={(_, info) => {
+                  if (Math.abs(info.offset.x) < 55) return;
+                  const direction = info.offset.x < 0 ? 1 : -1;
+                  setMobileGalleryDirection(direction);
+                  setMobileGalleryIndex((current) => (current + direction + GALLERY_DATA.length) % GALLERY_DATA.length);
+                }}
+                className="relative block aspect-[4/3] w-full touch-pan-y cursor-grab overflow-hidden rounded-[24px] border border-[#030811]/10 bg-[#030811] text-left shadow-[0_18px_45px_rgba(3,8,17,0.18)] active:cursor-grabbing"
               >
                 <img
                   src={GALLERY_DATA[mobileGalleryIndex].url}
@@ -1206,19 +1142,27 @@ export default function App() {
                     <p className="font-serif text-lg font-bold">{GALLERY_DATA[mobileGalleryIndex].title}</p>
                     <span className="mt-1 block text-[9px] uppercase tracking-[0.2em] text-white/70">{t.gallery_zoom}</span>
                   </div>
-                  <span className="rounded-full border border-white/20 bg-black/30 p-2.5 backdrop-blur-md">
+                  <button
+                    type="button"
+                    onClick={() => setLightboxIndex(mobileGalleryIndex)}
+                    aria-label={t.gallery_zoom}
+                    className="rounded-full border border-white/20 bg-black/30 p-2.5 backdrop-blur-md"
+                  >
                     <Image className="h-4 w-4 text-[#d7b56d]" />
-                  </span>
+                  </button>
                 </div>
-              </motion.button>
+              </motion.div>
             </AnimatePresence>
 
-            <div className="no-scrollbar mt-4 flex gap-3 overflow-x-auto pb-2">
+            <div className="no-scrollbar mt-4 flex justify-start sm:justify-center gap-3 overflow-x-auto pb-2">
               {GALLERY_DATA.map((item, index) => (
                 <button
                   type="button"
                   key={item.url}
-                  onClick={() => setMobileGalleryIndex(index)}
+                  onClick={() => {
+                    setMobileGalleryDirection(index > mobileGalleryIndex ? 1 : -1);
+                    setMobileGalleryIndex(index);
+                  }}
                   aria-label={`Chọn ảnh ${item.title}`}
                   className={`relative h-16 flex-shrink-0 overflow-hidden rounded-xl border transition-all ${
                     mobileGalleryIndex === index
@@ -1238,7 +1182,7 @@ export default function App() {
           </div>
 
           {/* Beautiful desktop bento mesh block */}
-          <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
             {GALLERY_DATA.map((item, index) => {
               const isTall = index === 1 || index === 4;
               return (
@@ -1669,23 +1613,108 @@ export default function App() {
       )}
 
       {/* 10. Footer */}
-      <footer className="bg-[#030811] text-white/50 text-[11px] pt-16 pb-12 border-t border-white/5 font-light">
-        <div className="max-w-7xl mx-auto px-6">
+      <footer className="bg-[#030811] text-white/50 text-[11px] pt-12 md:pt-16 pb-8 md:pb-12 border-t border-white/5 font-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Compact Mobile Footer */}
+          <div className="md:hidden">
+            <div className="rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-[#d7b56d]/25 bg-[#d7b56d]/10">
+                  <svg className="h-9 w-9" viewBox="0 0 90 70" fill="none">
+                    <circle cx="45" cy="35" r="25" stroke="#D7B56D" strokeWidth="3" />
+                    <path d="M34 21V49" stroke="#D7B56D" strokeWidth="5" strokeLinecap="round" />
+                    <path d="M58 24C54 20 47 20 43 24C37 30 37 40 43 46C47 50 54 50 58 46" stroke="#F4D187" strokeWidth="5" strokeLinecap="round" />
+                    <path d="M16 59C31 55 58 55 74 59" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <strong className="block font-serif text-base font-bold tracking-[0.12em] text-white">INTERCOIN DA NANG</strong>
+                  <span className="mt-1 block text-[8px] font-semibold tracking-[0.16em] text-[#d7b56d]">
+                    {lang === "vi" ? "BIỂN XANH • DI SẢN • NGHỈ DƯỠNG" : "OCEAN • HERITAGE • RETREAT"}
+                  </span>
+                </div>
+              </div>
+
+              <p className="mt-4 text-xs leading-relaxed text-white/60">{t.footer_about}</p>
+
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                <a href="tel:+84912345678" className="flex items-center justify-center gap-2 rounded-xl bg-[#d7b56d] px-3 py-3 text-[10px] font-bold uppercase tracking-wider text-[#030811]">
+                  <Phone className="h-3.5 w-3.5" /> {t.footer_hotline}
+                </a>
+                <a href="mailto:butler@emeraldvipline.com" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-[10px] font-bold uppercase tracking-wider text-white">
+                  <Mail className="h-3.5 w-3.5 text-[#d7b56d]" /> {t.footer_email}
+                </a>
+              </div>
+
+              <div className="mt-5 divide-y divide-white/10 border-y border-white/10">
+                <details className="group py-1">
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-3 text-xs font-bold uppercase tracking-wider text-white">
+                    {lang === "vi" ? "Thông Tin Liên Hệ" : "Contact Information"}
+                    <ChevronDown className="h-4 w-4 text-[#d7b56d] transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="space-y-2 pb-4 text-xs leading-relaxed text-white/65">
+                    <a href="tel:+84912345678" className="block text-white">+84 (0) 912 345 678</a>
+                    <span className="block">+84 (0) 24 3999 8888</span>
+                    <a href="mailto:butler@emeraldvipline.com" className="block text-white">butler@emeraldvipline.com</a>
+                  </div>
+                </details>
+
+                <details className="group py-1">
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-3 text-xs font-bold uppercase tracking-wider text-white">
+                    {lang === "vi" ? "Hệ Thống Văn Phòng" : "Our Offices"}
+                    <ChevronDown className="h-4 w-4 text-[#d7b56d] transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="space-y-3 pb-4 text-xs leading-relaxed text-white/65">
+                    <div className="flex gap-2"><MapPin className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-[#d7b56d]" /><p>{t.footer_office_hn_val}</p></div>
+                    <div className="flex gap-2"><MapPin className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-[#d7b56d]" /><p>{t.footer_office_hl_val}</p></div>
+                  </div>
+                </details>
+
+                <details className="group py-1">
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-3 text-xs font-bold uppercase tracking-wider text-white">
+                    {t.footer_newsletter_title}
+                    <ChevronDown className="h-4 w-4 text-[#d7b56d] transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="pb-4">
+                    <p className="mb-3 text-xs leading-relaxed text-white/60">{t.footer_newsletter_desc}</p>
+                    <div className="flex gap-2">
+                      <input type="email" placeholder={t.footer_newsletter_placeholder} className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-xs text-white outline-none focus:border-[#d7b56d]/50" />
+                      <button className="rounded-xl bg-[#d7b56d] px-4 text-[10px] font-bold uppercase text-[#030811]">{t.footer_newsletter_btn}</button>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <div className="mt-5 flex items-center justify-between">
+                <div className="flex gap-2">
+                  {[Facebook, Instagram, Youtube].map((SocialIcon, index) => (
+                    <a key={index} href={index === 0 ? "#facebook" : index === 1 ? "#instagram" : "#youtube"} className="rounded-full border border-white/10 bg-white/5 p-2.5 text-white/70">
+                      <SocialIcon className="h-3.5 w-3.5" />
+                    </a>
+                  ))}
+                </div>
+                <a href="#hero" className="rounded-full border border-white/10 bg-white/5 p-2.5 text-[#d7b56d]" aria-label="Về đầu trang">
+                  <ChevronDown className="h-4 w-4 rotate-180" />
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* Top Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5">
             {/* Column 1: Brand Info */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <svg className="w-8 h-8 opacity-90" viewBox="0 0 90 70" fill="none">
-                  <path d="M12 55L31 18L45 55H12Z" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M39 55L60 8L78 55H39Z" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M45 55C52 45 55 32 53 16C64 27 69 40 70 55H45Z" fill="#D7B56D" fillOpacity="0.8" />
-                  <path d="M10 62C26 58 40 58 54 62C66 65 76 64 84 60" stroke="#D7B56D" strokeWidth="1.5" />
+                  <circle cx="45" cy="35" r="25" stroke="#D7B56D" strokeWidth="3" />
+                  <path d="M34 21V49" stroke="#D7B56D" strokeWidth="5" strokeLinecap="round" />
+                  <path d="M58 24C54 20 47 20 43 24C37 30 37 40 43 46C47 50 54 50 58 46" stroke="#F4D187" strokeWidth="5" strokeLinecap="round" />
+                  <path d="M16 59C31 55 58 55 74 59" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
                 </svg>
                 <div className="flex flex-col select-none">
-                  <strong className="font-serif tracking-[0.15em] font-bold text-white text-sm">EMERALD VIP CRUISE</strong>
+                  <strong className="font-serif tracking-[0.12em] font-bold text-white text-sm">INTERCOIN DA NANG</strong>
                   <span className="text-[9px] tracking-wider text-[#d7b56d] font-semibold mt-0.5">
-                    {lang === "vi" ? "BIỆT LẬP • SANG TRỌNG • HOÀI NIỆM" : "PRIVATE • LUXURY • HERITAGE"}
+                    {lang === "vi" ? "BIỂN XANH • DI SẢN • NGHỈ DƯỠNG" : "OCEAN • HERITAGE • RETREAT"}
                   </span>
                 </div>
               </div>
@@ -1769,7 +1798,7 @@ export default function App() {
           </div>
 
           {/* Bottom Row */}
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-8 text-white/40 text-[10px]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-2 md:gap-4 pt-6 md:pt-8 text-center text-white/40 text-[9px] md:text-[10px]">
             <div className="flex flex-col items-center lg:items-start gap-1">
               <p>{t.footer_copyright}</p>
               <p>{t.footer_operator}</p>
