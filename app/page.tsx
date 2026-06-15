@@ -371,31 +371,17 @@ export default function App() {
               {t.book_now}
             </a>
 
-            {/* Language Switcher Button */}
-            <div className={`flex rounded-full p-0.5 text-[9px] font-bold tracking-wider gap-0.5 border ${
-              isLightHeader ? "bg-[#030811]/5 border-[#030811]/15" : "bg-white/5 border-white/10"
-            }`}>
-              <button 
-                onClick={() => setLang("vi")}
-                className={`px-2.5 py-1.5 rounded-full transition-all cursor-pointer ${
-                  lang === "vi" 
-                    ? "bg-[#d7b56d] text-[#030811]" 
-                    : isLightHeader ? "text-[#030811]/75 hover:text-[#030811]" : "text-white/70 hover:text-white"
-                }`}
-              >
-                VI
-              </button>
-              <button 
-                onClick={() => setLang("en")}
-                className={`px-2.5 py-1.5 rounded-full transition-all cursor-pointer ${
-                  lang === "en" 
-                    ? "bg-[#d7b56d] text-[#030811]" 
-                    : isLightHeader ? "text-[#030811]/75 hover:text-[#030811]" : "text-white/70 hover:text-white"
-                }`}
-              >
-                EN
-              </button>
-            </div>
+            {/* Language Switcher Button (Single toggle) */}
+            <button 
+              onClick={() => setLang(prev => prev === "vi" ? "en" : "vi")}
+              className={`px-3.5 py-2 rounded-full border text-[10px] font-bold tracking-wider cursor-pointer transition-all duration-300 ${
+                isLightHeader 
+                  ? "bg-[#030811]/5 border-[#030811]/15 text-[#030811] hover:bg-[#030811]/10 hover:text-[#d7b56d]" 
+                  : "bg-white/5 border-white/10 text-[#d7b56d] hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {lang === "vi" ? "VI" : "EN"}
+            </button>
 
             <button 
               onClick={() => setMobileMenuOpen(prev => !prev)}
