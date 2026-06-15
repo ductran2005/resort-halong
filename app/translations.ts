@@ -104,7 +104,23 @@ export const TRANSLATIONS = {
     chat_welcome: "Dạ thưa Quý khách, tôi là Hoàng - Quản Gia Trưởng của du thuyền Emerald Cruise. Tôi rất hân hạnh được đồng hành và tư vấn hải trình thượng lưu dành riêng cho Quý khách. Quý khách muốn hỏi về lịch trình hay dịch vụ phòng nghỉ xa hoa nào của chúng tôi ạ?",
     chat_err_butler: "Kính thưa Quý khách, do tín hiệu hành trình ngoài hải đảo tạm thời không ổn định, tôi xin phép được ghi nhận câu hỏi và giải đáp trực tiếp cho Quý vị ngay sau khi cập bến ạ.",
     chat_mobile_butler: "Trò chuyện trực tiếp Quản Gia Hoàng",
-    chat_bubble: "Trò chuyện Quản gia"
+    chat_bubble: "Trò chuyện Quản gia",
+
+    // Footer
+    footer_about: "Hành trình di sản độc bản trên Vịnh Hạ Long, kết hợp trọn vẹn giữa văn hóa Đông Dương quyến rũ và dịch vụ phục vụ cá nhân hóa đỉnh cấp hàng đầu.",
+    footer_office_hn: "Văn phòng Hà Nội",
+    footer_office_hn_val: "Tầng 18, Tòa nhà Lotte Center, 54 Liễu Giai, Ba Đình, Hà Nội",
+    footer_office_hl: "Văn phòng Hạ Long & Cảng đón",
+    footer_office_hl_val: "Lô 12, Cảng tàu khách quốc tế Tuần Châu, Hạ Long, Quảng Ninh",
+    footer_hotline: "Hotline 24/7",
+    footer_email: "Email hỗ trợ",
+    footer_newsletter_title: "Nhận Ưu Đãi Bí Mật",
+    footer_newsletter_desc: "Đăng ký nhận thông tin ưu đãi ẩn danh chỉ dành cho thành viên VIP.",
+    footer_newsletter_placeholder: "Nhập email của bạn...",
+    footer_newsletter_btn: "Đăng ký",
+    footer_copyright: "© 2026 Emerald Cruise Halong Bay Luxury Group. Bảo lưu mọi quyền.",
+    footer_operator: "Hải trình đặc tuyển được khai thác bởi Công ty TNHH Du Thuyền Ngọc Lục Bảo Việt Nam.",
+    footer_ai_studio: "Gia trì & Hoàn thiện bởi Đội ngũ Kiến trúc sư AI Studio."
   },
   en: {
     // Header & Nav
@@ -211,6 +227,22 @@ export const TRANSLATIONS = {
     chat_welcome: "Dear Guest, I am Hoang - the Head Butler of Emerald Cruise. It is my utmost honor to assist you in planning your private luxury voyage. What details about our itinerary or royal suites may I consult you on today?",
     chat_err_butler: "Dear Guest, due to temporary signals fluctuation at sea, please allow me to note down your request and consult you directly upon berthing.",
     chat_mobile_butler: "Chat directly with Butler Hoang",
-    chat_bubble: "Talk to Butler"
+    chat_bubble: "Talk to Butler",
+
+    // Footer
+    footer_about: "An exclusive heritage journey on Halong Bay, combining the charm of Indochine style with the finest personalized butler service.",
+    footer_office_hn: "Hanoi Representative Office",
+    footer_office_hn_val: "18th Floor, Lotte Center Hanoi, 54 Lieu Giai, Ba Dinh, Hanoi",
+    footer_office_hl: "Halong Office & Lounge",
+    footer_office_hl_val: "Lot 12, Tuan Chau International Marina, Halong City, Quang Ninh",
+    footer_hotline: "24/7 Hotline Support",
+    footer_email: "Customer Care Email",
+    footer_newsletter_title: "VIP Secret Offers",
+    footer_newsletter_desc: "Subscribe to receive private, elite-only cruise deals and secret updates.",
+    footer_newsletter_placeholder: "Enter your email address...",
+    footer_newsletter_btn: "Subscribe",
+    footer_copyright: "© 2026 Emerald Cruise Halong Bay Luxury Group. All rights reserved.",
+    footer_operator: "Signature itineraries operated by Vietnam Emerald Cruise Co., Ltd.",
+    footer_ai_studio: "Perfected & Maintained by AI Studio Architects Team."
   }
 };

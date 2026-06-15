@@ -26,7 +26,11 @@ import {
   Utensils, 
   Heart,
   Menu,
-  ChevronDown
+  ChevronDown,
+  Facebook,
+  Instagram,
+  Youtube,
+  Mail
 } from "lucide-react";
 import { SUITES_DATA, EXPERIENCES_DATA, ITINERARY_DATA, GALLERY_DATA } from "./data";
 import { SuiteType, ChatMessageType } from "./types";
@@ -316,7 +320,7 @@ export default function App() {
               : "bg-[#030811]/35 border border-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
           }`}
         >
-          <a href="#hero" className="flex items-center gap-3 group">
+          <a href="#hero" className="flex items-center gap-3 group flex-shrink-0">
             {/* Dynamic Svg branding icon */}
             <svg className="w-12 h-10 transition-transform duration-500 group-hover:-translate-y-0.5" viewBox="0 0 90 70" fill="none">
               <path d="M12 55L31 18L45 55H12Z" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" />
@@ -331,7 +335,7 @@ export default function App() {
           </a>
 
           {/* Desktop Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-shrink-0">
             {[
               { id: "story", label: t.story },
               { id: "itinerary", label: t.itinerary },
@@ -363,10 +367,10 @@ export default function App() {
           </nav>
 
           {/* Action CTA, Lang Switcher & Mobile trigger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-shrink-0">
             <a 
               href="#booking" 
-              className="hidden sm:inline-block px-5 py-2.5 rounded-full bg-[#d7b56d] text-[#030811] text-[10px] uppercase font-bold tracking-[0.2em] hover:-translate-y-0.5 transition-all duration-300 hover:shadow-[0_8px_25px_rgba(215,181,109,0.35)]"
+              className="hidden sm:inline-block whitespace-nowrap flex-shrink-0 px-5 py-2.5 rounded-full bg-[#d7b56d] text-[#030811] text-[10px] uppercase font-bold tracking-[0.2em] hover:-translate-y-0.5 transition-all duration-300 hover:shadow-[0_8px_25px_rgba(215,181,109,0.35)]"
             >
               {t.book_now}
             </a>
@@ -374,7 +378,7 @@ export default function App() {
             {/* Language Switcher Button (Single toggle) */}
             <button 
               onClick={() => setLang(prev => prev === "vi" ? "en" : "vi")}
-              className={`px-3.5 py-2 rounded-full border text-[10px] font-bold tracking-wider cursor-pointer transition-all duration-300 ${
+              className={`px-3.5 py-2 rounded-full border text-[10px] font-bold tracking-wider cursor-pointer transition-all duration-300 flex-shrink-0 ${
                 isLightHeader 
                   ? "bg-[#030811]/5 border-[#030811]/15 text-[#030811] hover:bg-[#030811]/10 hover:text-[#d7b56d]" 
                   : "bg-white/5 border-white/10 text-[#d7b56d] hover:bg-white/10 hover:text-white"
@@ -385,7 +389,7 @@ export default function App() {
 
             <button 
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              className={`md:hidden p-2 rounded-full transition-colors ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}
+              className={`lg:hidden p-2 rounded-full transition-colors flex-shrink-0 ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}
             >
               <Menu className="w-5 h-5" />
             </button>
@@ -399,7 +403,7 @@ export default function App() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-20 left-0 w-full bg-[#050f1e]/95 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-4 shadow-2xl md:hidden"
+              className="absolute top-20 left-0 w-full bg-[#050f1e]/95 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-4 shadow-2xl lg:hidden"
             >
               {[
                 { id: "story", label: t.story },
@@ -650,22 +654,24 @@ export default function App() {
             
             {/* Visual banner for selected Day */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[350px] lg:h-[550px] group">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeDay}
-                  initial={{ opacity: 0, scale: 1.08 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.8 }}
-                  src={ITINERARY_DATA[activeDay - 1].image}
-                  className="w-full h-full object-cover"
-                  alt={`Day ${activeDay}`}
-                  referrerPolicy="no-referrer"
-                />
-              </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-108">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={activeDay}
+                    initial={{ opacity: 0, scale: 1.08 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.8 }}
+                    src={ITINERARY_DATA[activeDay - 1].image}
+                    className="w-full h-full object-cover"
+                    alt={`Day ${activeDay}`}
+                    referrerPolicy="no-referrer"
+                  />
+                </AnimatePresence>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-8 left-8 right-8">
+              <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
                 <div className="text-[10px] uppercase font-bold text-[#d7b56d] tracking-widest">{t.itinerary_focus}</div>
                 <h3 className="font-serif text-2xl font-bold mt-1 text-[#f7f1e5] pr-4">
                   {lang === "vi" ? ITINERARY_DATA[activeDay - 1].titleVi : ITINERARY_DATA[activeDay - 1].titleEn}
@@ -1484,37 +1490,114 @@ export default function App() {
       )}
 
       {/* 10. Footer */}
-      <footer className="bg-[#030811] text-white/50 text-[11px] py-12 border-t border-white/5 font-light">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <svg className="w-8 h-8 opacity-60" viewBox="0 0 90 70" fill="none">
-              <path d="M12 55L31 18L45 55H12Z" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
-              <path d="M39 55L60 8L78 55H39Z" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
-              <path d="M45 55C52 45 55 32 53 16C64 27 69 40 70 55H45Z" fill="#D7B56D" fillOpacity="0.8" />
-              <path d="M10 62C26 58 40 58 54 62C66 65 76 64 84 60" stroke="#D7B56D" strokeWidth="1.5" />
-            </svg>
-            <div className="flex flex-col select-none">
-              <strong className="font-serif tracking-wider font-bold text-white">EMERALD VIP CRUISE</strong>
-              <span>
-                {lang === "vi" 
-                  ? "Biệt lập • Sang trọng • Kiến tạo hoài niệm" 
-                  : "Private • Luxury • Crafting Nostalgic Memories"}
-              </span>
+      <footer className="bg-[#030811] text-white/50 text-[11px] pt-16 pb-12 border-t border-white/5 font-light">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Top Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+            {/* Column 1: Brand Info */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <svg className="w-8 h-8 opacity-90" viewBox="0 0 90 70" fill="none">
+                  <path d="M12 55L31 18L45 55H12Z" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M39 55L60 8L78 55H39Z" stroke="#D7B56D" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M45 55C52 45 55 32 53 16C64 27 69 40 70 55H45Z" fill="#D7B56D" fillOpacity="0.8" />
+                  <path d="M10 62C26 58 40 58 54 62C66 65 76 64 84 60" stroke="#D7B56D" strokeWidth="1.5" />
+                </svg>
+                <div className="flex flex-col select-none">
+                  <strong className="font-serif tracking-[0.15em] font-bold text-white text-sm">EMERALD VIP CRUISE</strong>
+                  <span className="text-[9px] tracking-wider text-[#d7b56d] font-semibold mt-0.5">
+                    {lang === "vi" ? "BIỆT LẬP • SANG TRỌNG • HOÀI NIỆM" : "PRIVATE • LUXURY • HERITAGE"}
+                  </span>
+                </div>
+              </div>
+              <p className="text-white/60 leading-relaxed text-[11px] pr-2">
+                {t.footer_about}
+              </p>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3 pt-2">
+                <a href="#facebook" className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#d7b56d] hover:text-[#d7b56d] transition-all">
+                  <Facebook className="w-3.5 h-3.5" />
+                </a>
+                <a href="#instagram" className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#d7b56d] hover:text-[#d7b56d] transition-all">
+                  <Instagram className="w-3.5 h-3.5" />
+                </a>
+                <a href="#youtube" className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#d7b56d] hover:text-[#d7b56d] transition-all">
+                  <Youtube className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Column 2: Contact Info */}
+            <div className="space-y-4">
+              <h4 className="text-white font-serif font-bold text-xs uppercase tracking-wider">{lang === "vi" ? "Thông Tin Liên Hệ" : "Contact Information"}</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2.5">
+                  <Phone className="w-3.5 h-3.5 text-[#d7b56d] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="text-white/40 block text-[9px] uppercase tracking-wider">{t.footer_hotline}</span>
+                    <a href="tel:+84912345678" className="text-white hover:text-[#d7b56d] transition-colors font-medium">+84 (0) 912 345 678</a>
+                    <span className="text-white/30 block text-[10px]">+84 (0) 24 3999 8888</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Mail className="w-3.5 h-3.5 text-[#d7b56d] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="text-white/40 block text-[9px] uppercase tracking-wider">{t.footer_email}</span>
+                    <a href="mailto:butler@emeraldvipline.com" className="text-white hover:text-[#d7b56d] transition-colors">butler@emeraldvipline.com</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Office Addresses */}
+            <div className="space-y-4">
+              <h4 className="text-white font-serif font-bold text-xs uppercase tracking-wider">{lang === "vi" ? "Hệ Thống Văn Phòng" : "Our Offices"}</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#d7b56d] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="text-white/40 block text-[9px] uppercase tracking-wider">{t.footer_office_hn}</span>
+                    <p className="text-white/80 leading-relaxed">{t.footer_office_hn_val}</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#d7b56d] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="text-white/40 block text-[9px] uppercase tracking-wider">{t.footer_office_hl}</span>
+                    <p className="text-white/80 leading-relaxed">{t.footer_office_hl_val}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Newsletter */}
+            <div className="space-y-4">
+              <h4 className="text-white font-serif font-bold text-xs uppercase tracking-wider">{t.footer_newsletter_title}</h4>
+              <p className="text-white/60 leading-relaxed">
+                {t.footer_newsletter_desc}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2 pt-1">
+                <input
+                  type="email"
+                  placeholder={t.footer_newsletter_placeholder}
+                  className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-white/30 outline-none focus:border-[#d7b56d]/50 w-full"
+                />
+                <button className="px-4 py-2 bg-[#d7b56d] hover:bg-[#ebd29c] text-[#030811] text-[10px] uppercase font-bold rounded-lg transition-colors whitespace-nowrap">
+                  {t.footer_newsletter_btn}
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="text-center md:text-right space-y-1.5">
-            <p>
-              {lang === "vi" 
-                ? "© 2026 Emerald Cruise Halong Bay Luxury Group. Bảo lưu mọi quyền hành tác giả." 
-                : "© 2026 Emerald Cruise Halong Bay Luxury Group. All rights reserved."}
-            </p>
-            <p>
-              {lang === "vi" 
-                ? "Hải trình đặc tuyển khai thác bởi Công ty TNHH Du Thuyền Ngọc Lục Bảo Việt Nam." 
-                : "Signature itineraries operated by Vietnam Emerald Cruise Co., Ltd."}
-            </p>
-            <p className="text-white/30 font-mono text-[9px]">Gia trì & Hoàn thiện bởi Đội ngũ Kiến trúc sư AI Studio.</p>
+          {/* Bottom Row */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-8 text-white/40 text-[10px]">
+            <div className="flex flex-col items-center lg:items-start gap-1">
+              <p>{t.footer_copyright}</p>
+              <p>{t.footer_operator}</p>
+            </div>
+            <div className="text-center lg:text-right">
+              <p className="font-mono text-white/25 text-[9px]">{t.footer_ai_studio}</p>
+            </div>
           </div>
         </div>
       </footer>
