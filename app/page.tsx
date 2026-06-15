@@ -25,7 +25,8 @@ import {
   Clock, 
   Utensils, 
   Heart,
-  Menu
+  Menu,
+  ChevronDown
 } from "lucide-react";
 import { SUITES_DATA, EXPERIENCES_DATA, ITINERARY_DATA, GALLERY_DATA } from "./data";
 import { SuiteType, ChatMessageType } from "./types";
@@ -78,6 +79,26 @@ export default function App() {
   const [chatInput, setChatInput] = useState("");
   const [chatLoading, setChatLoading] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+
+  // Custom dropdown states & refs
+  const [suiteOpen, setSuiteOpen] = useState(false);
+  const [guestsOpen, setGuestsOpen] = useState(false);
+  const suiteDropdownRef = useRef<HTMLDivElement>(null);
+  const guestsDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Click outside listener for custom dropdowns
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (suiteDropdownRef.current && !suiteDropdownRef.current.contains(event.target as Node)) {
+        setSuiteOpen(false);
+      }
+      if (guestsDropdownRef.current && !guestsDropdownRef.current.contains(event.target as Node)) {
+        setGuestsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Synchronize chat welcome message with current language selection if it's the first message
   useEffect(() => {
@@ -1227,29 +1248,98 @@ export default function App() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div>
+                  {/* Suite Custom Dropdown */}
+                  <div className="relative" ref={suiteDropdownRef}>
                     <label className="text-[10px] uppercase font-bold tracking-widest text-[#d7b56d] block mb-2">{t.form_suite_label}</label>
-                    <select
-                      value={bookingForm.suite}
-                      onChange={(e) => setBookingForm(prev => ({ ...prev, suite: e.target.value }))}
-                      className="w-full bg-[#050f1e] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all"
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSuiteOpen(!suiteOpen);
+                        setGuestsOpen(false);
+                      }}
+                      className="w-full flex items-center justify-between bg-[#050f1e]/80 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all text-left cursor-pointer"
                     >
-                      {SUITES_DATA.map(suite => (
-                        <option key={suite.id} value={suite.id}>{suite.name}</option>
-                      ))}
-                    </select>
+                      <span>
+                        {SUITES_DATA.find(s => s.id === bookingForm.suite)?.name || "Select suite"}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 text-white/50 transition-transform duration-300 ${suiteOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    
+                    <AnimatePresence>
+                      {suiteOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute z-50 left-0 right-0 mt-2 rounded-xl bg-[#091527] border border-white/10 shadow-2xl overflow-hidden backdrop-blur-xl"
+                        >
+                          {SUITES_DATA.map(suite => (
+                            <button
+                              key={suite.id}
+                              type="button"
+                              onClick={() => {
+                                setBookingForm(prev => ({ ...prev, suite: suite.id }));
+                                setSuiteOpen(false);
+                              }}
+                              className={`w-full text-left px-4 py-3 text-sm transition-colors cursor-pointer ${
+                                bookingForm.suite === suite.id 
+                                  ? "bg-[#d7b56d] text-[#030811] font-bold" 
+                                  : "text-white/80 hover:bg-white/5 hover:text-white"
+                              }`}
+                            >
+                              {suite.name}
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <div>
+
+                  {/* Guests Custom Dropdown */}
+                  <div className="relative" ref={guestsDropdownRef}>
                     <label className="text-[10px] uppercase font-bold tracking-widest text-[#d7b56d] block mb-2">{t.form_guests_label}</label>
-                    <select
-                      value={bookingForm.guests}
-                      onChange={(e) => setBookingForm(prev => ({ ...prev, guests: parseInt(e.target.value) }))}
-                      className="w-full bg-[#050f1e] border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all"
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setGuestsOpen(!guestsOpen);
+                        setSuiteOpen(false);
+                      }}
+                      className="w-full flex items-center justify-between bg-[#050f1e]/80 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all text-left cursor-pointer"
                     >
-                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
-                        <option key={n} value={n}>{n} {lang === "vi" ? "khách" : "guests"}</option>
-                      ))}
-                    </select>
+                      <span>
+                        {bookingForm.guests} {lang === "vi" ? "khách" : "guests"}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 text-white/50 transition-transform duration-300 ${guestsOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    
+                    <AnimatePresence>
+                      {guestsOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute z-50 left-0 right-0 mt-2 max-h-60 overflow-y-auto rounded-xl bg-[#091527] border border-white/10 shadow-2xl backdrop-blur-xl no-scrollbar"
+                        >
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+                            <button
+                              key={n}
+                              type="button"
+                              onClick={() => {
+                                setBookingForm(prev => ({ ...prev, guests: n }));
+                                setGuestsOpen(false);
+                              }}
+                              className={`w-full text-left px-4 py-3 text-sm transition-colors cursor-pointer ${
+                                bookingForm.guests === n 
+                                  ? "bg-[#d7b56d] text-[#030811] font-bold" 
+                                  : "text-white/80 hover:bg-white/5 hover:text-white"
+                              }`}
+                            >
+                              {n} {lang === "vi" ? "khách" : "guests"}
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
 
