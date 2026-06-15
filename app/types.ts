@@ -3,11 +3,15 @@ export interface SuiteType {
   name: string;
   vietnameseName: string;
   size: string;
-  view: string;
-  capacity: string;
+  viewVi: string;
+  viewEn: string;
+  capacityVi: string;
+  capacityEn: string;
   pricePerPax: number;
-  description: string;
-  features: string[];
+  descriptionVi: string;
+  descriptionEn: string;
+  featuresVi: string[];
+  featuresEn: string[];
   images: string[];
 }
 
@@ -15,20 +19,26 @@ export interface ExperienceType {
   id: string;
   title: string;
   vietnameseTitle: string;
-  description: string;
+  descriptionVi: string;
+  descriptionEn: string;
   image: string;
-  time: string;
+  timeVi: string;
+  timeEn: string;
 }
 
 export interface ItineraryDayType {
   day: number;
-  title: string;
-  subtitle: string;
+  titleVi: string;
+  titleEn: string;
+  subtitleVi: string;
+  subtitleEn: string;
   activities: {
     time: string;
-    activity: string;
+    activityVi: string;
+    activityEn: string;
     highlight?: boolean;
-    description: string;
+    descriptionVi: string;
+    descriptionEn: string;
   }[];
   image: string;
 }

@@ -1,0 +1,212 @@
+export const TRANSLATIONS = {
+  vi: {
+    // Header & Nav
+    story: "Câu Chuyện",
+    itinerary: "Hải Trình",
+    suites: "Hạng Suite VIP",
+    experiences: "Trải Nghiệm",
+    gallery: "Khoảnh Khắc",
+    book_now: "Đặt Chuyến Đi",
+    
+    // Hero
+    hero_badge: "Kiệt Tác Nghỉ Dưỡng Trên Biển",
+    hero_title_private: "RIÊNG TƯ",
+    hero_desc: "Hành trình huyền thoại giữa lòng di sản Kỳ quan Thế giới — Vịnh Hạ Long. Nơi sự riêng tư tối mật, kiến trúc Đông Dương trang hoàng và dịch vụ quản gia cá nhân tạo nên một tuyệt tác dành riêng cho giới thượng lưu.",
+    hero_card_title: "Hải Trình Signature",
+    hero_card_duration: "3 Ngày 2 Đêm",
+    hero_card_from: "Giá khởi điểm từ",
+    hero_card_pax: "/khách",
+    hero_card_cta: "Giành Chỗ Thượng Lưu",
+    
+    // Story
+    story_badge: "Vọng Gác Tâm Hồn",
+    story_title: "Không chỉ là chuyến đi. Đó là một nghi thức sống chậm.",
+    story_quote: "“Emerald Cruise sinh ra từ hoài niệm về những cuộc viễn du lữ thứ thời Hoàng kim của Vua Bảo Đại, nơi du khách tận hưởng Vịnh Hạ Long theo cách riêng tư, kín đáo và độc quyền nhất.”",
+    story_privacy_title: "Bí Mật Từ Sự Riêng Tư",
+    story_privacy_desc: "Hạn chế số lượng hành khách tham gia tối thiểu hằng ngày giúp bảo vệ sự riêng tư trọn vẹn. Bạn hoàn toàn làm chủ boong tàu thư thái mà không gặp phải tiếng ồn ào đô thị.",
+    story_taste_title: "Trải Nghiệm Khơi Gợi Vị Giác",
+    story_taste_desc: "Mỗi thực đơn được thiết kế tùy biến cho từng cá nhân, dựa trên khẩu vị riêng của những vị khách khó tính nhất. Đầu bếp nấu tươi sống trực tiếp phục vụ riêng tư tại phòng lộng lẫy.",
+    story_stat_suites: "VIP Luxury Suites",
+    story_stat_butlers: "Quản Gia Tận Tâm",
+    story_stat_privacy: "Thượng Đỉnh Riêng Tư",
+
+    // Itinerary
+    itinerary_badge: "HẢI TRÌNH ĐỘC QUYỀN",
+    itinerary_title: "Dấu Chân Giữa Biển Ngọc",
+    itinerary_desc: "Bản hòa tấu 3 ngày 2 đêm nâng tầm giá trị sống. Từng khoảnh khắc trảy hội hoàng hôn, thưởng vị ẩm thực hay chèo thuyền len lỏi hang động đều được tính toán hoàn mỹ.",
+    itinerary_day: "Ngày",
+    itinerary_highlight: "ĐẶC QUYỀN VIP",
+    itinerary_focus: "Tiêu Điểm Hành Trình",
+    
+    // Suites & Calculator
+    suites_badge: "Suites & Pricing",
+    suites_title: "Căn Hộ Thượng Uyển Trên Sóng",
+    suites_desc: "Chuỗi 12 phòng nghỉ siêu cao cấp mang cấu trúc nghệ thuật, lắp kính từ trần đến sàn mở rộng tầm nhìn, giúp Quý vị chìm vào giấc mơ biển cả hoang sơ.",
+    suites_pax: "/khách",
+    suites_privileges: "ĐẶC QUYỀN HẠNG PHÒNG",
+    calc_title: "ƯỚC TÍNH CHI PHÍ TRỌN GÓI",
+    calc_guests: "Số lượng thành viên đi",
+    calc_guests_unit: "Khách",
+    calc_date: "Hải trình dự định",
+    calc_offer: "Áp dụng chương trình",
+    calc_offer_val: "Ưu Đãi Trực Tuyến",
+    calc_base_price: "Đơn giá tiêu chuẩn:",
+    calc_discount: "Ưu đãi nhóm đông xịn",
+    calc_transfer: "Đưa đón limousine Hà Nội:",
+    calc_transfer_val: "FREE Đặc quyền VIP",
+    calc_tax: "Thuế & Phí thắng cảnh Vịnh:",
+    calc_tax_val: "Đã tính trọn gói",
+    calc_total: "Tổng Chi Phí Dự Tính",
+    calc_cta: "Áp Dụng Cho Booking",
+    
+    // Experiences
+    exp_badge: "Đặc Quyền Của Giới Tinh Hoa",
+    exp_title: "Được Đo Ni Cho Bản Ngã",
+    exp_info: "* Mọi hoạt động kayak, trải nghiệm hướng dẫn và tiệc thử nếm đều có chuyên gia quốc tế hỗ trợ an toàn và đã gộp sẵn trọn gói trong chi phí ban đầu, không phát sinh phụ thu lúp xúp.",
+    
+    // Gallery
+    gallery_badge: "Thắp Lửa Lưu Niệm",
+    gallery_title: "Khoảnh Khắc Đắt Giá",
+    gallery_desc: "Nụ cười sảng khoái trên chiếc kayak gỗ, vạt hoàng hôn đỏ rực tếu tít nâng ly rượu ngọt. Những tháp ảnh kể lại vạn lời mộng tinh tú.",
+    gallery_zoom: "Bấm để xem lớn",
+    gallery_album: "Emerald Cruise Album",
+    gallery_image_counter: "Hình ảnh",
+    gallery_image_of: "trên",
+    
+    // Booking Form
+    book_badge: "Đặc Quyền Tư Vấn Đỉnh Phong",
+    book_title: "Sẵn Sàng Khởi Hành?",
+    book_desc: "Hãy để lại lời nhắn quý báu. Chuyên viên đại sứ phục vụ Thượng khách của Emerald Cruise sẽ tức tốc ghi nhận, chuẩn bị đĩa trà bánh ngon và gọi điện xin tiếp chỉ ý kiến hoàn mỹ trong cuộc điện đàm 10 phút.",
+    book_sec_title: "Chính Sách Bảo Mật Tối Cao",
+    book_sec_desc: "Thông tin liên lạc và nguyện vọng cá nhân được ẩn danh, mã hóa tối mật hoàn toàn trong hệ sinh thái.",
+    book_custom_title: "Cá Nhân Hóa Trọn Vẹn",
+    book_custom_desc: "Phục vụ linh hoạt theo các tiêu chí ăn uống tôn giáo, dị ứng thực phẩm, quà sinh nhật hay hoa cưới hồng tươi.",
+    form_success_title: "Đã Ghi Nhận Nguyện Vọng",
+    form_success_cta: "Gửi Thêm Một Yêu Cầu Khác",
+    form_name_label: "HỌ VÀ TÊN THƯỢNG KHÁCH",
+    form_name_placeholder: "Ví dụ: Nguyễn Văn A",
+    form_phone_label: "SỐ ĐIỆN THOẠI NHẬN TIẾP TƯ VẤN",
+    form_phone_placeholder: "Ví dụ: 0912 345 678",
+    form_suite_label: "HẠNG CABIN THƯỢNG PHẨM",
+    form_guests_label: "SỐ THÀNH VIÊN ĐI",
+    form_date_label: "NGÀY CẬP BẾN DỰ TÍNH",
+    form_submit: "Đặt Lịch Tư Vấn Sang Trọng",
+    form_submitting: "Đang Gửi Lịch Tư Vấn...",
+
+    // Butler Chat
+    chat_role: "Emerald Butler",
+    chat_name: "Quản Gia Hoàng",
+    chat_typing: "Quản gia đang soạn câu trả lời",
+    chat_suggest: "Đề Xuất Câu Hỏi Để Hỏi",
+    chat_placeholder: "Hỏi Quản gia Hoàng điều bất cứ...",
+    chat_welcome: "Dạ thưa Quý khách, tôi là Hoàng - Quản Gia Trưởng của du thuyền Emerald Cruise. Tôi rất hân hạnh được đồng hành và tư vấn hải trình thượng lưu dành riêng cho Quý khách. Quý khách muốn hỏi về lịch trình hay dịch vụ phòng nghỉ xa hoa nào của chúng tôi ạ?",
+    chat_err_butler: "Kính thưa Quý khách, do tín hiệu hành trình ngoài hải đảo tạm thời không ổn định, tôi xin phép được ghi nhận câu hỏi và giải đáp trực tiếp cho Quý vị ngay sau khi cập bến ạ.",
+    chat_mobile_butler: "Trò chuyện trực tiếp Quản Gia Hoàng",
+    chat_bubble: "Trò chuyện Quản gia"
+  },
+  en: {
+    // Header & Nav
+    story: "Our Story",
+    itinerary: "Itinerary",
+    suites: "VIP Suites",
+    experiences: "Experiences",
+    gallery: "Gallery",
+    book_now: "Book Cruise",
+    
+    // Hero
+    hero_badge: "A Masterpiece of Sea Vacationing",
+    hero_title_private: "PRIVATE",
+    hero_desc: "A legendary voyage amidst the natural wonder of Halong Bay, Vietnam. Where absolute privacy, majestic Indochine architecture, and dedicated personal butler services converge to create a masterpiece for elite souls.",
+    hero_card_title: "Signature Itinerary",
+    hero_card_duration: "3 Days 2 Nights",
+    hero_card_from: "Price starts from",
+    hero_card_pax: "/guest",
+    hero_card_cta: "Reserve VIP Suite",
+    
+    // Story
+    story_badge: "Sanctuary of the Soul",
+    story_title: "More than a journey. A ritual of slow living.",
+    story_quote: "“Emerald Cruise was born out of nostalgia for the Golden Age voyages of Emperor Bao Dai, where travelers experience Halong Bay in the most private, discreet, and exclusive way.”",
+    story_privacy_title: "The Luxury of Privacy",
+    story_privacy_desc: "Limiting the daily passenger count preserves absolute privacy. You will fully command the peaceful deck without the noise of modern life.",
+    story_taste_title: "Curated Gastronomy",
+    story_taste_desc: "Every menu is tailored to the individual culinary tastes of our most discerning guests. Freshly prepared by master chefs and served directly in your luxurious suite.",
+    story_stat_suites: "VIP Luxury Suites",
+    story_stat_butlers: "Dedicated Butlers",
+    story_stat_privacy: "Absolute Privacy",
+
+    // Itinerary
+    itinerary_badge: "EXCLUSIVE JOURNEY",
+    itinerary_title: "Footprints in Emerald Waters",
+    itinerary_desc: "A 3-day 2-night symphony elevating the value of life. Every sunset champagne toast, culinary feast, or kayaking adventure has been thoughtfully designed.",
+    itinerary_day: "Day",
+    itinerary_highlight: "VIP PRIVILEGES",
+    itinerary_focus: "Itinerary Highlights",
+    
+    // Suites & Calculator
+    suites_badge: "Suites & Pricing",
+    suites_title: "Floating Royal Residences",
+    suites_desc: "An array of 12 ultra-luxury artistic cabins, featuring floor-to-ceiling panoramic windows, inviting you to dive into the raw dream of the ocean.",
+    suites_pax: "/guest",
+    suites_privileges: "SUITE PRIVILEGES",
+    calc_title: "ESTIMATED TOTAL FARE",
+    calc_guests: "Number of Guests",
+    calc_guests_unit: "Guests",
+    calc_date: "Expected Date",
+    calc_offer: "Program Applied",
+    calc_offer_val: "Online Promotion",
+    calc_base_price: "Standard Fare:",
+    calc_discount: "Group Discount Promotion",
+    calc_transfer: "Hanoi Limousine Transfer:",
+    calc_transfer_val: "FREE VIP Privilege",
+    calc_tax: "Taxes & Bay Entrance Fees:",
+    calc_tax_val: "All-Inclusive",
+    calc_total: "Estimated Total Price",
+    calc_cta: "Apply to Booking",
+    
+    // Experiences
+    exp_badge: "Privileges of the Elite",
+    exp_title: "Tailored to Your Identity",
+    exp_info: "* All kayaking, guiding, and tasting activities are supported by international experts for safety and are fully bundled in the initial fare with no hidden charges.",
+    
+    // Gallery
+    gallery_badge: "Capturing Memories",
+    gallery_title: "Precious Moments",
+    gallery_desc: "Radiant smiles on wooden kayaks, the golden sun setting over champagne toasts. These images capture the beautiful stories of your vacation.",
+    gallery_zoom: "Click to zoom",
+    gallery_album: "Emerald Cruise Album",
+    gallery_image_counter: "Image",
+    gallery_image_of: "of",
+    
+    // Booking Form
+    book_badge: "Elite Consultation Service",
+    book_title: "Ready to Embark?",
+    book_desc: "Leave your wishes below. Emerald Cruise's personal guest ambassadors will log your requests, prepare tea and pastries, and call you back in 10 minutes.",
+    book_sec_title: "Top-Tier Privacy Policy",
+    book_sec_desc: "Your contact information and trip details are kept strictly confidential within our ecosystem.",
+    book_custom_title: "Absolute Personalization",
+    book_custom_desc: "Tailored to dietary restrictions, allergies, birthdays, anniversaries, or fresh flowers request.",
+    form_success_title: "Request Logged Successfully",
+    form_success_cta: "Submit Another Request",
+    form_name_label: "FULL NAME OF GUEST",
+    form_name_placeholder: "e.g., John Doe",
+    form_phone_label: "CONTACT PHONE NUMBER",
+    form_phone_placeholder: "e.g., +84 912 345 678",
+    form_suite_label: "CABIN SUITE CATEGORY",
+    form_guests_label: "NUMBER OF GUESTS",
+    form_date_label: "EXPECTED DEPARTURE DATE",
+    form_submit: "Book Luxury Consultation",
+    form_submitting: "Submitting Request...",
+
+    // Butler Chat
+    chat_role: "Emerald Butler",
+    chat_name: "Butler Hoang",
+    chat_typing: "Butler is typing",
+    chat_suggest: "Suggested Questions",
+    chat_placeholder: "Ask Butler Hoang anything...",
+    chat_welcome: "Dear Guest, I am Hoang - the Head Butler of Emerald Cruise. It is my utmost honor to assist you in planning your private luxury voyage. What details about our itinerary or royal suites may I consult you on today?",
+    chat_err_butler: "Dear Guest, due to temporary signals fluctuation at sea, please allow me to note down your request and consult you directly upon berthing.",
+    chat_mobile_butler: "Chat directly with Butler Hoang",
+    chat_bubble: "Talk to Butler"
+  }
+};
