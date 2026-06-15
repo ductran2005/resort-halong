@@ -466,11 +466,11 @@ export default function App() {
             </div>
             
             <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.85] tracking-tight text-[#f7f1e5]">
-              HALONG
+              {t.hero_title_line1}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f7f1e5] via-[#efd398] to-[#d7b56d]">{t.hero_title_private}</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f7f1e5] via-[#efd398] to-[#d7b56d]">{t.hero_title_line2}</span>
               <br />
-              CRUISE
+              {t.hero_title_line3}
             </h1>
             
             <p className="mt-8 text-white/75 text-base md:text-lg max-w-lg leading-relaxed font-light">

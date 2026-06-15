@@ -10,7 +10,9 @@ export const TRANSLATIONS = {
     
     // Hero
     hero_badge: "Kiệt Tác Nghỉ Dưỡng Trên Biển",
-    hero_title_private: "RIÊNG TƯ",
+    hero_title_line1: "HẠ LONG",
+    hero_title_line2: "DU THUYỀN",
+    hero_title_line3: "DI SẢN",
     hero_desc: "Hành trình huyền thoại giữa lòng di sản Kỳ quan Thế giới — Vịnh Hạ Long. Nơi sự riêng tư tối mật, kiến trúc Đông Dương trang hoàng và dịch vụ quản gia cá nhân tạo nên một tuyệt tác dành riêng cho giới thượng lưu.",
     hero_card_title: "Hải Trình Signature",
     hero_card_duration: "3 Ngày 2 Đêm",
@@ -115,7 +117,9 @@ export const TRANSLATIONS = {
     
     // Hero
     hero_badge: "A Masterpiece of Sea Vacationing",
-    hero_title_private: "PRIVATE",
+    hero_title_line1: "HALONG",
+    hero_title_line2: "HERITAGE",
+    hero_title_line3: "CRUISE",
     hero_desc: "A legendary voyage amidst the natural wonder of Halong Bay, Vietnam. Where absolute privacy, majestic Indochine architecture, and dedicated personal butler services converge to create a masterpiece for elite souls.",
     hero_card_title: "Signature Itinerary",
     hero_card_duration: "3 Days 2 Nights",
