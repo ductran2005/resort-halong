@@ -10,7 +10,7 @@ export const SUITES_DATA: SuiteType[] = [
     viewEn: "Panoramic Bay View & Private Balcony",
     capacityVi: "2 Người Lớn (+1 Trẻ Em)",
     capacityEn: "2 Adults (+1 Child)",
-    pricePerPax: 29900000,
+    pricePerPax: 2990000,
     descriptionVi: "Không gian kết hợp hài hòa nét kiến trúc Đông Dương sang trọng và tiện nghi hiện đại, sở hữu ban công lãng mạn ngắm vịnh và bồn tắm dát vàng mở rộng hướng đại dương.",
     descriptionEn: "A harmonious blend of luxurious Indochine architecture and modern comforts, featuring a romantic private balcony and a gold-plated bathtub opening to panoramic ocean views.",
     featuresVi: [
@@ -42,7 +42,7 @@ export const SUITES_DATA: SuiteType[] = [
     viewEn: "180-Degree Panoramic View of the Ecosystem",
     capacityVi: "2 Người Lớn (+2 Trẻ Em)",
     capacityEn: "2 Adults (+2 Children)",
-    pricePerPax: 49900000,
+    pricePerPax: 4990000,
     descriptionVi: "Được thiết kế tinh tế tinh xảo tối cao tại vị trí đầu du thuyền, trang bị sàn gỗ quý, ban công tắm nắng chuyên biệt và quản gia cá nhân túc trực phục vụ bữa ăn lãng mạn bất kỳ lúc nào.",
     descriptionEn: "Exquisitely designed at the yacht's bow, featuring precious hardwood floors, a private sunbathing deck, and a personal butler ready to serve romantic dinners at any time.",
     featuresVi: [
@@ -74,7 +74,7 @@ export const SUITES_DATA: SuiteType[] = [
     viewEn: "270-Degree Cinematic View of the Wonder",
     capacityVi: "4 Người Lớn (+2 Trẻ Em)",
     capacityEn: "4 Adults (+2 Children)",
-    pricePerPax: 79900000,
+    pricePerPax: 7990000,
     descriptionVi: "Tuyệt tác phòng thông tầng siêu sang đầu tiên trên vịnh biển Hạ Long. Thừa hưởng hồ bơi sục hơi Jacuzzi riêng tư trực diện mặt nước và hầm rượu vang độc bản phục vụ các bữa tiệc thượng đẳng.",
     descriptionEn: "The first duplex masterpiece in Halong Bay. Featuring a private outdoor Jacuzzi directly touching the sea surface and an exclusive wine cellar for premium private dining.",
     featuresVi: [

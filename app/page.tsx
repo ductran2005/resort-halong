@@ -500,8 +500,8 @@ export default function App() {
 
             <div className="my-6">
               <div className="text-white/50 text-[11px] uppercase tracking-wider">{t.hero_card_from}</div>
-              <div className="text-4xl md:text-5xl font-serif text-[#f7f1e5] font-bold tracking-tight mt-1">
-                {formatVND(19900000)}
+              <div className="text-4xl md:text-5xl font-sans text-[#f7f1e5] font-bold tracking-tight mt-1">
+                {formatVND(1990000)}
                 <span className="text-sm font-sans font-light text-white/60 ml-1">{t.hero_card_pax}</span>
               </div>
             </div>
@@ -598,15 +598,15 @@ export default function App() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 p-6 rounded-2xl bg-[#030811]/5 border border-[#030811]/10 mt-6">
                 <div>
-                  <div className="font-serif text-3xl sm:text-4xl font-bold">12</div>
+                  <div className="font-sans text-3xl sm:text-4xl font-bold">12</div>
                   <div className="text-[10px] uppercase tracking-wider text-black/60 mt-1">{t.story_stat_suites}</div>
                 </div>
                 <div>
-                  <div className="font-serif text-3xl sm:text-4xl font-bold">24/7</div>
+                  <div className="font-sans text-3xl sm:text-4xl font-bold">24/7</div>
                   <div className="text-[10px] uppercase tracking-wider text-black/60 mt-1">{t.story_stat_butlers}</div>
                 </div>
                 <div>
-                  <div className="font-serif text-3xl sm:text-4xl font-bold">100%</div>
+                  <div className="font-sans text-3xl sm:text-4xl font-bold">100%</div>
                   <div className="text-[10px] uppercase tracking-wider text-black/60 mt-1">{t.story_stat_privacy}</div>
                 </div>
               </div>
@@ -840,7 +840,7 @@ export default function App() {
                   </div>
                   <div className="text-right">
                     <span className="text-[10px] text-white/50 block">{lang === "vi" ? "Hải trình 3D2N trọn gói" : "3D2N All-inclusive Fare"}</span>
-                    <span className="font-serif text-xl sm:text-2xl text-[#d7b56d] font-bold block">
+                    <span className="font-sans text-xl sm:text-2xl text-[#d7b56d] font-bold block">
                       {formatVND(selectedSuite.pricePerPax)} <span className="text-xs font-sans text-white/50 font-light">{t.suites_pax}</span>
                     </span>
                   </div>
@@ -931,7 +931,7 @@ export default function App() {
 
                     <div className="flex justify-between items-end border-t border-white/10 pt-3 mt-1.5 text-sm">
                       <span className="text-white font-serif font-semibold text-base">{t.calc_total}</span>
-                      <span className="text-[#d7b56d] font-mono text-xl font-bold">{formatVND(finalPrice)}</span>
+                      <span className="text-[#d7b56d] font-sans text-xl font-bold">{formatVND(finalPrice)}</span>
                     </div>
                   </div>
 
