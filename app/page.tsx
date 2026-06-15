@@ -438,7 +438,7 @@ export default function App() {
       </header>
 
       {/* 2. Hero Section */}
-      <section id="hero" className="relative h-screen flex items-end justify-between overflow-hidden">
+      <section id="hero" className="relative min-h-screen lg:h-screen flex items-end justify-between overflow-hidden pt-28 lg:pt-0">
         {/* Dynamic slow zoom backdrop */}
         <div className="absolute inset-0 z-0">
           <motion.img 
