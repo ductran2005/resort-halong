@@ -884,11 +884,11 @@ export default function App() {
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div>
                       <span className="text-white/50 block mb-1">{t.calc_date}</span>
-                      <input 
-                        type="date"
+                      <CustomDatePicker
                         value={travelDate}
-                        onChange={(e) => setTravelDate(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg p-2 text-white outline-none focus:border-[#d7b56d]"
+                        onChange={setTravelDate}
+                        lang={lang}
+                        className="w-full flex items-center justify-between bg-white/5 border border-white/10 rounded-lg p-2 text-white outline-none focus:border-[#d7b56d] text-left text-xs cursor-pointer"
                       />
                     </div>
                     <div>
@@ -1331,11 +1331,11 @@ export default function App() {
 
                 <div>
                   <label className="text-[10px] uppercase font-bold tracking-widest text-[#d7b56d] block mb-2">{t.form_date_label}</label>
-                  <input
-                    type="date"
+                  <CustomDatePicker
                     value={bookingForm.date}
-                    onChange={(e) => setBookingForm(prev => ({ ...prev, date: e.target.value }))}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all"
+                    onChange={(dateStr) => setBookingForm(prev => ({ ...prev, date: dateStr }))}
+                    lang={lang}
+                    className="w-full flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all text-left cursor-pointer"
                   />
                 </div>
 
@@ -1519,6 +1519,204 @@ export default function App() {
         </div>
       </footer>
 
+    </div>
+  );
+}
+
+// Premium Custom Date Picker Component with Luxury Indochine Style
+interface CustomDatePickerProps {
+  value: string;
+  onChange: (dateStr: string) => void;
+  lang: "vi" | "en";
+  className?: string;
+}
+
+function CustomDatePicker({ value, onChange, lang, className }: CustomDatePickerProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const parseDate = (str: string) => {
+    if (!str) return new Date();
+    const parts = str.split("-");
+    return new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+  };
+
+  const selectedDate = parseDate(value);
+  const [viewDate, setViewDate] = useState(selectedDate);
+
+  useEffect(() => {
+    setViewDate(parseDate(value));
+  }, [value]);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
+
+  const firstDayOfMonth = new Date(year, month, 1);
+  const startDayOfWeek = firstDayOfMonth.getDay();
+  const adjustedStartDay = startDayOfWeek === 0 ? 6 : startDayOfWeek - 1;
+  const numDaysInMonth = new Date(year, month + 1, 0).getDate();
+  const numDaysInPrevMonth = new Date(year, month, 0).getDate();
+
+  const days = [];
+  
+  // Prev month tail
+  for (let i = adjustedStartDay - 1; i >= 0; i--) {
+    const d = numDaysInPrevMonth - i;
+    const prevMonth = month === 0 ? 11 : month - 1;
+    const prevYear = month === 0 ? year - 1 : year;
+    const dateStr = `${prevYear}-${String(prevMonth + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+    days.push({ dayNum: d, isCurrentMonth: false, dateStr });
+  }
+  
+  // Current month
+  for (let d = 1; d <= numDaysInMonth; d++) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+    days.push({ dayNum: d, isCurrentMonth: true, dateStr });
+  }
+  
+  // Next month head
+  const totalSlots = 42;
+  const remainingSlots = totalSlots - days.length;
+  for (let d = 1; d <= remainingSlots; d++) {
+    const nextMonth = month === 11 ? 0 : month + 1;
+    const nextYear = month === 11 ? year + 1 : year;
+    const dateStr = `${nextYear}-${String(nextMonth + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+    days.push({ dayNum: d, isCurrentMonth: false, dateStr });
+  }
+
+  const handlePrevMonth = () => {
+    setViewDate(new Date(year, month - 1, 1));
+  };
+
+  const handleNextMonth = () => {
+    setViewDate(new Date(year, month + 1, 1));
+  };
+
+  const handleSelectDay = (dateStr: string) => {
+    onChange(dateStr);
+    setIsOpen(false);
+  };
+
+  const handleToday = () => {
+    const today = new Date();
+    const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+    onChange(todayStr);
+    setViewDate(today);
+    setIsOpen(false);
+  };
+
+  const formatDisplay = (str: string) => {
+    if (!str) return "";
+    const parts = str.split("-");
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+  };
+
+  const monthNamesVi = ["Tháng Một", "Tháng Hai", "Tháng Ba", "Tháng Tư", "Tháng Năm", "Tháng Sáu", "Tháng Bảy", "Tháng Tám", "Tháng Chín", "Tháng Mười", "Tháng Mười Một", "Tháng Mười Hai"];
+  const monthNamesEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const weekDaysVi = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
+  const weekDaysEn = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+
+  const monthName = lang === "vi" ? monthNamesVi[month] : monthNamesEn[month];
+  const weekDays = lang === "vi" ? weekDaysVi : weekDaysEn;
+
+  return (
+    <div className="relative w-full" ref={containerRef}>
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className={className || "w-full flex items-center justify-between bg-[#050f1e]/80 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm outline-none focus:border-[#d7b56d] focus:bg-white/[0.08] transition-all text-left cursor-pointer"}
+      >
+        <span>{formatDisplay(value)}</span>
+        <Calendar className="w-4 h-4 text-white/50" />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="absolute z-[100] right-0 sm:left-0 mt-2 p-4 w-[280px] rounded-xl bg-[#091527] border border-white/10 shadow-2xl backdrop-blur-xl"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between mb-4">
+              <button
+                type="button"
+                onClick={handlePrevMonth}
+                className="p-1 rounded-lg hover:bg-white/5 text-white/70 hover:text-white cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <span className="text-xs font-bold text-white tracking-wide">{monthName} {year}</span>
+              <button
+                type="button"
+                onClick={handleNextMonth}
+                className="p-1 rounded-lg hover:bg-white/5 text-white/70 hover:text-white cursor-pointer"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Week days */}
+            <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-white/40 mb-2">
+              {weekDays.map(wd => (
+                <div key={wd}>{wd}</div>
+              ))}
+            </div>
+
+            {/* Days grid */}
+            <div className="grid grid-cols-7 gap-1">
+              {days.map((d, index) => {
+                const isSelected = d.dateStr === value;
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => handleSelectDay(d.dateStr)}
+                    className={`h-7 w-7 text-xs flex items-center justify-center rounded-lg transition-all cursor-pointer ${
+                      isSelected
+                        ? "bg-[#d7b56d] text-[#030811] font-bold"
+                        : d.isCurrentMonth
+                          ? "text-white/80 hover:bg-white/10 hover:text-white"
+                          : "text-white/25 hover:bg-white/5 hover:text-white/50"
+                    }`}
+                  >
+                    {d.dayNum}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Footer */}
+            <div className="border-t border-white/5 mt-3 pt-2 flex justify-between">
+              <button
+                type="button"
+                onClick={handleToday}
+                className="text-[10px] font-bold text-[#d7b56d] hover:underline cursor-pointer"
+              >
+                {lang === "vi" ? "Hôm nay" : "Today"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="text-[10px] font-bold text-white/50 hover:text-white cursor-pointer"
+              >
+                {lang === "vi" ? "Đóng" : "Close"}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
