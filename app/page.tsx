@@ -335,7 +335,7 @@ export default function App() {
           </a>
 
           {/* Desktop Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-shrink-0">
+          <nav className="hidden xl:flex items-center gap-8 flex-shrink-0">
             {[
               { id: "story", label: t.story },
               { id: "itinerary", label: t.itinerary },
@@ -389,7 +389,7 @@ export default function App() {
 
             <button 
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              className={`lg:hidden p-2 rounded-full transition-colors flex-shrink-0 ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}
+              className={`xl:hidden p-2 rounded-full transition-colors flex-shrink-0 ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}
             >
               <Menu className="w-5 h-5" />
             </button>
@@ -403,7 +403,7 @@ export default function App() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-20 left-0 w-full bg-[#050f1e]/95 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-4 shadow-2xl lg:hidden"
+              className="absolute top-20 left-0 w-full bg-[#050f1e]/95 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-4 shadow-2xl xl:hidden"
             >
               {[
                 { id: "story", label: t.story },
