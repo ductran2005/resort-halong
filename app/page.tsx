@@ -314,23 +314,23 @@ export default function App() {
       <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50">
         <div 
           id="navigation-capsule" 
-          className={`flex items-center justify-between px-6 py-4 rounded-full backdrop-blur-xl transition-all duration-500 ${
+          className={`flex items-center justify-between px-3 sm:px-6 py-2.5 sm:py-4 rounded-full backdrop-blur-xl transition-all duration-500 ${
             isLightHeader 
               ? "bg-white/60 border border-[#030811]/10 shadow-[0_15px_35px_rgba(3,8,17,0.12)]" 
               : "bg-[#030811]/35 border border-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
           }`}
         >
-          <a href="#hero" className="flex items-center gap-3 group flex-shrink-0">
+          <a href="#hero" className="flex items-center gap-1.5 sm:gap-3 group flex-shrink-0">
             {/* Dynamic Svg branding icon */}
-            <svg className="w-12 h-10 transition-transform duration-500 group-hover:-translate-y-0.5" viewBox="0 0 90 70" fill="none">
+            <svg className="w-9 h-7 sm:w-12 sm:h-10 transition-transform duration-500 group-hover:-translate-y-0.5" viewBox="0 0 90 70" fill="none">
               <path d="M12 55L31 18L45 55H12Z" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" />
               <path d="M39 55L60 8L78 55H39Z" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" />
               <path d="M45 55C52 45 55 32 53 16C64 27 69 40 70 55H45Z" fill="#D7B56D" fillOpacity={isLightHeader ? "0.95" : "0.8"} className="transition-all duration-500" />
               <path d="M10 62C26 58 40 58 54 62C66 65 76 64 84 60" stroke={isLightHeader ? "#030811" : "#D7B56D"} strokeWidth="1.5" className="transition-all duration-500" />
             </svg>
             <div className="flex flex-col leading-none">
-              <strong className={`font-serif text-xl tracking-[0.2em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>EMERALD</strong>
-              <span className="text-[8px] tracking-[0.35em] text-[#d7b56d] font-semibold mt-1">CRUISE • HALONG BAY</span>
+              <strong className={`font-serif text-base sm:text-xl tracking-[0.2em] font-bold transition-colors duration-500 ${isLightHeader ? "text-[#030811]" : "text-[#f7f1e5]"}`}>EMERALD</strong>
+              <span className="text-[7px] sm:text-[8px] tracking-[0.35em] text-[#d7b56d] font-semibold mt-0.5 sm:mt-1">CRUISE • HALONG BAY</span>
             </div>
           </a>
 
@@ -367,7 +367,7 @@ export default function App() {
           </nav>
 
           {/* Action CTA, Lang Switcher & Mobile trigger */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             <a 
               href="#booking" 
               className="hidden sm:inline-block whitespace-nowrap flex-shrink-0 px-5 py-2.5 rounded-full bg-[#d7b56d] text-[#030811] text-[10px] uppercase font-bold tracking-[0.2em] hover:-translate-y-0.5 transition-all duration-300 hover:shadow-[0_8px_25px_rgba(215,181,109,0.35)]"
@@ -378,7 +378,7 @@ export default function App() {
             {/* Language Switcher Button (Single toggle) */}
             <button 
               onClick={() => setLang(prev => prev === "vi" ? "en" : "vi")}
-              className={`px-3.5 py-2 rounded-full border text-[10px] font-bold tracking-wider cursor-pointer transition-all duration-300 flex-shrink-0 ${
+              className={`px-2 py-1 sm:px-3.5 sm:py-2 rounded-full border text-[9px] sm:text-[10px] font-bold tracking-wider cursor-pointer transition-all duration-300 flex-shrink-0 ${
                 isLightHeader 
                   ? "bg-[#030811]/5 border-[#030811]/15 text-[#030811] hover:bg-[#030811]/10 hover:text-[#d7b56d]" 
                   : "bg-white/5 border-white/10 text-[#d7b56d] hover:bg-white/10 hover:text-white"
@@ -389,7 +389,7 @@ export default function App() {
 
             <button 
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              className={`xl:hidden p-2 rounded-full transition-colors flex-shrink-0 ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}
+              className={`xl:hidden p-1.5 sm:p-2 rounded-full transition-colors flex-shrink-0 ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}
             >
               <Menu className="w-5 h-5" />
             </button>
