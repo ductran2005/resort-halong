@@ -92,7 +92,7 @@ export const SUITES_DATA: SuiteType[] = [
       "Personalized Fine Dining dinners served inside the suite"
     ],
     images: [
-      "https://images.unsplash.com/photo-1611891404114-50907903642a?q=80&w=1200",
+      "/images/imperial_duplex_suite_1.png",
       "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200",
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200"
     ]
