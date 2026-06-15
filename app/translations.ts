@@ -62,8 +62,8 @@ export const TRANSLATIONS = {
     calc_cta: "Áp Dụng Cho Booking",
     
     // Experiences
-    exp_badge: "Đặc Quyền Của Giới Tinh Hoa",
-    exp_title: "Được Đo Ni Cho Bản Ngã",
+    exp_badge: "Những Khoảnh Khắc Đáng Giá",
+    exp_title: "Giữa Biển Trời Di Sản",
     exp_info: "* Mọi hoạt động kayak, trải nghiệm hướng dẫn và tiệc thử nếm đều có chuyên gia quốc tế hỗ trợ an toàn và đã gộp sẵn trọn gói trong chi phí ban đầu, không phát sinh phụ thu lúp xúp.",
     
     // Gallery
@@ -169,8 +169,8 @@ export const TRANSLATIONS = {
     calc_cta: "Apply to Booking",
     
     // Experiences
-    exp_badge: "Privileges of the Elite",
-    exp_title: "Tailored to Your Identity",
+    exp_badge: "Precious Moments",
+    exp_title: "Amidst the Heritage Bay",
     exp_info: "* All kayaking, guiding, and tasting activities are supported by international experts for safety and are fully bundled in the initial fare with no hidden charges.",
     
     // Gallery
