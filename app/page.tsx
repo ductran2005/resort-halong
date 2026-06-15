@@ -245,8 +245,8 @@ export default function App() {
       // Fallback response for offline status
       setBookingSuccessMsg(
         lang === "vi"
-          ? `Kính thưa Quý khách ${bookingForm.name}, yêu cầu tư vấn hải trình đã được Quản gia tiếp nhận thành công. Chuyên viên dịch vụ của Emerald Cruise sẽ chủ động gọi lại cho Quý khách qua số điện thoại ${bookingForm.phone} trong vòng 10 phút.`
-          : `Dear Guest ${bookingForm.name}, your request has been successfully logged by our Butler. Emerald Cruise service representative will call you back at ${bookingForm.phone} within 10 minutes.`
+          ? `Kính thưa Quý khách ${bookingForm.name}, yêu cầu tư vấn chuyến đi đã được Quản gia tiếp nhận thành công. Chuyên viên dịch vụ của Intercoin Resort sẽ chủ động gọi lại cho Quý khách qua số điện thoại ${bookingForm.phone} trong vòng 10 phút.`
+          : `Dear Guest ${bookingForm.name}, your request has been successfully logged by our Butler. Intercoin Resort service representative will call you back at ${bookingForm.phone} within 10 minutes.`
       );
     } finally {
       setBookingLoading(false);
@@ -450,7 +450,7 @@ export default function App() {
             transition={{ duration: 15, ease: "easeOut" }}
             src="/images/danang_golden_bridge.png"
             className="w-full h-full object-cover" 
-            alt="Emerald Da Nang Resort & Villas"
+            alt="Intercoin Resort Da Nang"
             referrerPolicy="no-referrer"
           />
           {/* Immersive overlay */}
@@ -575,7 +575,7 @@ export default function App() {
               <img 
                 src="/images/danang_resort_sunrise.png" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Emerald Da Nang Horizon pool"
+                alt="Intercoin Resort Horizon pool"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-[#f7f1e5] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -1651,7 +1651,7 @@ export default function App() {
                 <a href="tel:+84912345678" className="flex items-center justify-center gap-2 rounded-xl bg-[#d7b56d] px-3 py-3 text-[10px] font-bold uppercase tracking-wider text-[#030811]">
                   <Phone className="h-3.5 w-3.5" /> {t.footer_hotline}
                 </a>
-                <a href="mailto:butler@emeraldvipline.com" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-[10px] font-bold uppercase tracking-wider text-white">
+                <a href="mailto:butler@intercoinresort.com" className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-[10px] font-bold uppercase tracking-wider text-white">
                   <Mail className="h-3.5 w-3.5 text-[#d7b56d]" /> {t.footer_email}
                 </a>
               </div>
@@ -1665,7 +1665,7 @@ export default function App() {
                   <div className="space-y-2 pb-4 text-xs leading-relaxed text-white/65">
                     <a href="tel:+84912345678" className="block text-white">+84 (0) 912 345 678</a>
                     <span className="block">+84 (0) 24 3999 8888</span>
-                    <a href="mailto:butler@emeraldvipline.com" className="block text-white">butler@emeraldvipline.com</a>
+                    <a href="mailto:butler@intercoinresort.com" className="block text-white">butler@intercoinresort.com</a>
                   </div>
                 </details>
 
@@ -1761,7 +1761,7 @@ export default function App() {
                   <Mail className="w-3.5 h-3.5 text-[#d7b56d] mt-0.5 flex-shrink-0" />
                   <div>
                     <span className="text-white/40 block text-[9px] uppercase tracking-wider">{t.footer_email}</span>
-                    <a href="mailto:butler@emeraldvipline.com" className="text-white hover:text-[#d7b56d] transition-colors">butler@emeraldvipline.com</a>
+                    <a href="mailto:butler@intercoinresort.com" className="text-white hover:text-[#d7b56d] transition-colors">butler@intercoinresort.com</a>
                   </div>
                 </li>
               </ul>
