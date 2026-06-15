@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import { 
   motion, 
@@ -329,19 +331,6 @@ export default function App() {
               Đặt Chuyến Đi
             </a>
             
-            {/* Chat button for mobile/desktop to speak with Butler */}
-            <button 
-              onClick={() => setChatOpen(true)}
-              className={`px-4 py-2.5 rounded-full border text-[10px] uppercase font-bold tracking-[0.2em] flex items-center gap-1.5 transition-all duration-500 ${
-                isLightHeader 
-                  ? "border-[#030811]/30 text-[#030811] hover:bg-[#030811] hover:text-[#f7f1e5]" 
-                  : "border-[#d7b56d]/30 text-[#d7b56d] hover:bg-[#d7b56d] hover:text-[#030811]"
-              }`}
-            >
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-              <span>Quản Gia AI</span>
-            </button>
-
             <button 
               onClick={() => setMobileMenuOpen(prev => !prev)}
               className={`md:hidden p-2 rounded-full transition-colors ${isLightHeader ? "text-[#030811] hover:bg-black/5" : "text-white hover:bg-white/5"}`}

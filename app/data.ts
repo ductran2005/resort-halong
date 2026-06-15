@@ -75,7 +75,7 @@ export const EXPERIENCES_DATA: ExperienceType[] = [
     title: "Eco Kayaking",
     vietnameseTitle: "Khám Phá Hang Sáng Tối",
     description: "Tự tay lướt mái chèo gỗ qua những hang luồn kỳ bí, chiêm ngưỡng thế giới núi đá vôi nghìn năm trầm mặc dưới ánh nắng ngọc bích rực rỡ.",
-    image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200",
+    image: "/images/halong_kayaking.png",
     time: "15:00 - Ngày 1 & Ngày 2"
   },
   {
@@ -194,7 +194,7 @@ export const ITINERARY_DATA: ItineraryDayType[] = [
     day: 3,
     title: "Tịnh Tâm Đầu Thu - Khứ Hồi Cảng Ngọc",
     subtitle: "Tắm nắng ban mai - Trải nghiệm lớp học nấu ăn nghệ thuật - Tiễn đoàn",
-    image: "https://images.unsplash.com/photo-1627541718143-1adc1b582e62?q=80&w=1200",
+    image: "/images/aodai_mic_halong.png",
     activities: [
       {
         time: "06:30",
@@ -233,9 +233,9 @@ export const ITINERARY_DATA: ItineraryDayType[] = [
 
 export const GALLERY_DATA = [
   { url: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=900", title: "Làn nước xanh trong như ngọc bích" },
-  { url: "https://images.unsplash.com/photo-1627541718143-1adc1b582e62?q=80&w=900", title: "Đón nắng ban mai rực rỡ" },
+  { url: "/images/halong_sunrise.png", title: "Đón nắng ban mai rực rỡ" },
   { url: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=900", title: "Không gian Hoàng Gia tráng lệ" },
   { url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=900", title: "Hồ Jacuzzi sục nước ấm ngoài trời tiếp sườn núi" },
-  { url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900", title: "Thực đơn tối Fine Dining" },
-  { url: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=900", title: "Hoạt động chèo xuồng yên ả" }
+  { url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=900", title: "Thực đơn tối Fine Dining" },
+  { url: "/images/halong_kayak_experience.png", title: "Hoạt động chèo xuồng yên ả" }
 ];
