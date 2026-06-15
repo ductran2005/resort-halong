@@ -288,7 +288,7 @@ export default function App() {
       
       const butlerReply: ChatMessageType = {
         role: "model",
-        parts: [{ text: data.text || (lang === "vi" ? "Dạ thưa Quý khách, có một chút gián đoạn kết nối sóng trên biển. Tôi rất sẵn lòng hỗ trợ Quý khách ngay đây ạ." : "Dear guest, there was a slight signal interruption at sea. I am back and fully ready to assist you now.") }]
+        parts: [{ text: data.text || (lang === "vi" ? "Kết nối đang gián đoạn. Bạn có thể thử gửi lại câu hỏi hoặc để lại yêu cầu tư vấn để đội ngũ Intercoin hỗ trợ." : "The connection was interrupted. Please try again or leave a consultation request for the Intercoin team.") }]
       };
       setChatMessages((prev) => [...prev, butlerReply]);
     } catch (error) {
@@ -1491,39 +1491,44 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 30 }}
-            className="fixed bottom-6 right-6 w-[90%] sm:w-[380px] h-[550px] rounded-3xl bg-[#050f1e] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-[200] overflow-hidden flex flex-col"
+            className="fixed inset-x-3 bottom-3 h-[min(680px,calc(100dvh-24px))] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[400px] sm:h-[min(680px,calc(100dvh-40px))] rounded-[28px] bg-[#050f1e]/98 border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.85)] backdrop-blur-2xl z-[200] overflow-hidden flex flex-col"
           >
             {/* Chat header area */}
-            <div className="p-4 bg-gradient-to-r from-[#0a1424] to-[#050f1e] border-b border-white/5 flex justify-between items-center">
+            <div className="p-4 bg-gradient-to-r from-[#0a1424] to-[#050f1e] border-b border-white/10 flex justify-between items-center flex-shrink-0">
               <div className="flex items-center gap-2.5">
                 <div className="w-10 h-10 rounded-full bg-[#d7b56d]/15 border border-[#d7b56d]/30 flex items-center justify-center text-[#d7b56d] relative">
-                  <Anchor className="w-5 h-5 animate-spin-slow" />
+                  <svg className="h-7 w-7" viewBox="0 0 90 70" fill="none" aria-hidden="true">
+                    <circle cx="45" cy="35" r="25" stroke="currentColor" strokeWidth="4" />
+                    <path d="M34 21V49" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M58 24C54 20 47 20 43 24C37 30 37 40 43 46C47 50 54 50 58 46" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+                  </svg>
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-[#050f1e]" />
                 </div>
                 <div>
-                  <span className="text-[9px] uppercase tracking-widest text-[#d7b56d] block font-semibold leading-none">{t.chat_role}</span>
-                  <span className="font-serif font-bold text-sm text-white block mt-1">{t.chat_name}</span>
+                  <span className="text-[9px] uppercase tracking-[0.18em] text-[#d7b56d] block font-semibold leading-none">{t.chat_role}</span>
+                  <span className="font-serif font-bold text-base text-white block mt-1">{t.chat_name}</span>
                 </div>
               </div>
               <button 
                 onClick={() => setChatOpen(false)}
-                className="p-1 px-1.5 rounded-lg text-white/50 hover:text-white hover:bg-white/5 transition-colors"
+                aria-label={lang === "vi" ? "Đóng trợ lý" : "Close assistant"}
+                className="p-2 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Chat messages list */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 font-light text-xs sm:text-sm">
+            <div className="flex-1 min-h-0 overflow-y-auto p-4 space-y-4 font-light text-sm">
               {chatMessages.map((msg, index) => (
                 <div 
                   key={index} 
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  <div className={`p-4 rounded-2xl max-w-[85%] leading-relaxed ${
+                  <div className={`px-4 py-3.5 rounded-2xl max-w-[88%] leading-relaxed ${
                     msg.role === "user" 
-                      ? "bg-[#d7b56d] text-[#030811] rounded-tr-none font-medium" 
-                      : "bg-white/5 border border-white/5 text-white/90 rounded-tl-none"
+                      ? "bg-[#d7b56d] text-[#030811] rounded-br-md font-medium" 
+                      : "bg-white/[0.06] border border-white/10 text-white/90 rounded-bl-md"
                   }`}>
                     {msg.parts[0].text}
                   </div>
@@ -1545,27 +1550,27 @@ export default function App() {
             </div>
 
             {/* Suggest questions presets */}
-            <div className="px-4 py-2 bg-black/20 border-t border-white/5">
-              <span className="text-[8px] uppercase tracking-wider text-white/40 block mb-2">{t.chat_suggest}</span>
+            <div className="px-4 py-3 bg-black/20 border-t border-white/5 flex-shrink-0">
+              <span className="text-[8px] uppercase tracking-[0.16em] text-white/40 block mb-2">{t.chat_suggest}</span>
               <div className="flex gap-2 pb-1 overflow-x-auto no-scrollbar scroll-smooth">
                 {(lang === "vi" 
                   ? [
-                      "Phòng Presidential Suite giá bao nhiêu?",
-                      "Hải Trình 3D2N đi qua những đâu?",
-                      "Tiệc hoàng hôn Sunset Party phục vụ đồ uống gì?",
-                      "Có trực thăng đưa đón không?"
+                      "Lịch trình Đà Nẵng 3 ngày 2 đêm",
+                      "Tư vấn phòng hướng biển",
+                      "Đi Cầu Vàng khi nào đẹp?",
+                      "Đặt lịch tư vấn"
                     ]
                   : [
-                      "How much is the Presidential Suite?",
-                      "What is the route for 3D2N itinerary?",
-                      "What drinks are served at Sunset Party?",
-                      "Do you offer helicopter transfer?"
+                      "Da Nang 3-day itinerary",
+                      "Recommend an ocean-view room",
+                      "Best time to visit Golden Bridge",
+                      "Request a consultation"
                     ]
                 ).map((txt, idx) => (
                   <button
                     key={idx}
                     onClick={() => sendChatMessage(txt)}
-                    className="flex-shrink-0 text-[10px] px-2.5 py-1.5 rounded-full border border-white/5 bg-white/5 text-white/70 hover:text-[#d7b56d] hover:border-[#d7b56d]/30 transition-all font-light"
+                    className="flex-shrink-0 text-[10px] px-3 py-2 rounded-full border border-white/10 bg-white/5 text-white/75 hover:text-[#d7b56d] hover:border-[#d7b56d]/30 transition-all"
                   >
                     {txt}
                   </button>
@@ -1574,19 +1579,20 @@ export default function App() {
             </div>
 
             {/* Chat text box input */}
-            <div className="p-3 bg-gradient-to-r from-[#050f1e] to-[#0a1424] border-t border-white/5 flex items-center gap-2">
+            <div className="p-3 pb-[max(12px,env(safe-area-inset-bottom))] bg-gradient-to-r from-[#050f1e] to-[#0a1424] border-t border-white/10 flex items-center gap-2 flex-shrink-0">
               <input
                 type="text"
                 placeholder={t.chat_placeholder}
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendChatMessage()}
-                className="flex-1 bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-xs text-white placeholder-white/30 outline-none focus:border-[#d7b56d]/40"
+                className="min-w-0 flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 outline-none focus:border-[#d7b56d]/50"
               />
               <button 
                 onClick={() => sendChatMessage()}
                 disabled={!chatInput.trim() || chatLoading}
-                className="p-3 bg-[#d7b56d] text-[#030811] rounded-xl hover:bg-[#ebd29c] transition-colors disabled:opacity-50"
+                aria-label={lang === "vi" ? "Gửi tin nhắn" : "Send message"}
+                className="p-3.5 bg-[#d7b56d] text-[#030811] rounded-xl hover:bg-[#ebd29c] transition-colors disabled:opacity-50"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -1600,11 +1606,15 @@ export default function App() {
         <motion.button
           onClick={() => setChatOpen(true)}
           whileHover={{ scale: 1.05 }}
-          className="fixed bottom-6 right-6 p-4 rounded-full bg-[#d7b56d] text-[#030811] shadow-2xl z-[150] hidden sm:flex items-center gap-2 font-bold cursor-pointer group"
+          className="fixed bottom-6 right-6 p-3.5 rounded-full bg-[#d7b56d] text-[#030811] shadow-2xl z-[150] hidden sm:flex items-center gap-2 font-bold cursor-pointer group"
         >
           <div className="relative">
-            <MessageSquare className="w-5 h-5 flex-shrink-0" />
-            <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full animate-ping" />
+            <svg className="h-7 w-7 flex-shrink-0" viewBox="0 0 90 70" fill="none" aria-hidden="true">
+              <circle cx="45" cy="35" r="25" stroke="currentColor" strokeWidth="4" />
+              <path d="M34 21V49" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+              <path d="M58 24C54 20 47 20 43 24C37 30 37 40 43 46C47 50 54 50 58 46" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+            </svg>
+            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-[#d7b56d] animate-pulse" />
           </div>
           <span className="max-w-0 overflow-hidden group-hover:max-w-[120px] transition-all duration-300 text-xs uppercase tracking-wider whitespace-nowrap leading-none">
             {t.chat_bubble}

@@ -96,15 +96,15 @@ export const TRANSLATIONS = {
     form_submitting: "Đang Gửi Lịch Tư Vấn...",
 
     // Butler Chat
-    chat_role: "Emerald Butler",
-    chat_name: "Quản Gia Hoàng",
-    chat_typing: "Quản gia đang soạn câu trả lời",
+    chat_role: "Intercoin Travel",
+    chat_name: "Trợ Lý Du Lịch",
+    chat_typing: "Intercoin đang trả lời",
     chat_suggest: "Đề Xuất Câu Hỏi Để Hỏi",
-    chat_placeholder: "Hỏi Quản gia Hoàng điều bất cứ...",
-    chat_welcome: "Dạ thưa Quý khách, tôi là Hoàng - Quản Gia Trưởng của Emerald Da Nang Resort & Heritage Tours. Tôi rất hân hạnh được đồng hành và tư vấn kỳ nghỉ dưỡng thượng lưu dành riêng cho Quý khách. Quý khách muốn hỏi về lịch trình tham quan Bà Nà Hills, Hội An hay dịch vụ biệt thự trước biển xa hoa nào của chúng tôi ạ?",
-    chat_err_butler: "Kính thưa Quý khách, do tín hiệu kết nối tạm thời không ổn định, tôi xin phép được ghi nhận câu hỏi và giải đáp trực tiếp cho Quý vị ngay lập tức qua cuộc gọi tư vấn ạ.",
-    chat_mobile_butler: "Trò chuyện trực tiếp Quản Gia Hoàng",
-    chat_bubble: "Trò chuyện Quản gia",
+    chat_placeholder: "Bạn muốn khám phá Đà Nẵng thế nào?",
+    chat_welcome: "Xin chào, tôi là Trợ lý Du lịch Intercoin. Tôi có thể giúp bạn lên lịch trình Đà Nẵng, chọn điểm tham quan và tìm trải nghiệm nghỉ dưỡng phù hợp. Bạn dự định đi ngày nào và cùng bao nhiêu người?",
+    chat_err_butler: "Kết nối đang tạm thời gián đoạn. Vui lòng thử lại hoặc gửi yêu cầu tư vấn để đội ngũ Intercoin hỗ trợ.",
+    chat_mobile_butler: "Trò chuyện với Intercoin",
+    chat_bubble: "Hỏi Intercoin",
 
     // Footer
     footer_about: "Kỳ nghỉ dưỡng di sản độc bản tại Đà Nẵng, kết hợp trọn vẹn giữa văn hóa miền Trung quyến rũ và dịch vụ quản gia phục vụ cá nhân hóa đỉnh cấp hàng đầu.",
@@ -219,15 +219,15 @@ export const TRANSLATIONS = {
     form_submitting: "Submitting Request...",
 
     // Butler Chat
-    chat_role: "Emerald Butler",
-    chat_name: "Butler Hoang",
-    chat_typing: "Butler is typing",
+    chat_role: "Intercoin Travel",
+    chat_name: "Travel Assistant",
+    chat_typing: "Intercoin is replying",
     chat_suggest: "Suggested Questions",
-    chat_placeholder: "Ask Butler Hoang anything...",
-    chat_welcome: "Dear Guest, I am Hoang - the Head Butler of Emerald Da Nang Resort & Heritage Tours. It is my utmost honor to assist you in planning your private luxury holiday. What details about our Ba Na Hills, Hoi An itineraries or beachfront villas may I consult you on today?",
-    chat_err_butler: "Dear Guest, due to temporary signals fluctuation, please allow me to note down your request and consult you directly via our phone service shortly.",
-    chat_mobile_butler: "Chat directly with Butler Hoang",
-    chat_bubble: "Talk to Butler",
+    chat_placeholder: "How would you like to explore Da Nang?",
+    chat_welcome: "Hello, I am the Intercoin Travel Assistant. I can help plan your Da Nang itinerary, recommend attractions, and find a suitable resort experience. What are your travel dates and group size?",
+    chat_err_butler: "The connection is temporarily unavailable. Please try again or send a consultation request to the Intercoin team.",
+    chat_mobile_butler: "Chat with Intercoin",
+    chat_bubble: "Ask Intercoin",
 
     // Footer
     footer_about: "An exclusive heritage holiday in Da Nang, combining the charm of Central Vietnam with the finest personalized butler service.",
